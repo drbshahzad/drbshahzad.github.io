@@ -32,19 +32,17 @@
             color: var(--text-color);
             background-color: var(--bg-color);
             line-height: 1.7;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
         }
 
-        /* Page Layout Container (Right Pane Setup) */
-        .wrapper {
+        /* Fixed Two-Column Layout Container */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
             display: grid;
             grid-template-columns: 1fr 340px;
             gap: 2.5rem;
-            max-width: 1200px;
-            width: 100%;
-            padding: 3rem 1.5rem;
+            align-items: start;
         }
 
         /* Main Left Content Area */
@@ -52,6 +50,7 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            min-width: 0; /* Prevents flex items from overflowing grid */
         }
 
         section {
@@ -212,9 +211,8 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            height: fit-content;
             position: sticky;
-            top: 2rem;
+            top: 3rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
@@ -305,22 +303,23 @@
             color: var(--accent-color);
         }
 
-        /* Responsive Layout for Mobile */
+        /* Responsive Layout for Mobile Devices */
         @media (max-width: 900px) {
-            .wrapper {
+            .page-container {
                 grid-template-columns: 1fr;
                 padding: 1.5rem 1rem;
             }
             aside {
                 position: relative;
                 top: 0;
+                order: -1; /* Places the profile card at the top on phones */
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="page-container">
         <!-- Main Left Content Pane -->
         <main>
             <!-- About Me Section -->
