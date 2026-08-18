@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Jane Doe | Assistant Professor of Computer Science</title>
-    <!-- Google Fonts & FontAwesome for Icons -->
+    <title>Dr. Jane Doe | Academic Portal</title>
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -34,37 +34,112 @@
             line-height: 1.7;
         }
 
-        /* Fixed Two-Column Layout Container */
-        .page-container {
-            max-width: 1200px;
+        /* Three-Column Grid Layout */
+        .layout-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
             display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 2.5rem;
+            grid-template-columns: 240px 1fr 320px;
+            gap: 2rem;
             align-items: start;
         }
 
-        /* Main Left Content Area */
-        main {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            min-width: 0; /* Prevents flex items from overflowing grid */
+        /* Common Card Styling */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            margin-bottom: 1.5rem;
         }
 
-        section {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        /* ---------------- LEFT PANE: Navigation & Quick Links ---------------- */
+        .left-pane {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .brand-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand-logo i {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-menu a i {
+            color: var(--text-muted);
+            width: 16px;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--tag-bg);
+            color: var(--accent-hover);
+        }
+
+        .nav-menu a:hover i {
+            color: var(--accent-color);
+        }
+
+        .quick-stats {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* ---------------- MIDDLE PANE: Primary Stream ---------------- */
+        .middle-pane {
+            min-width: 0; /* Prevents overflow in CSS grid */
         }
 
         h2 {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             color: var(--primary-color);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-color);
             display: flex;
@@ -74,15 +149,16 @@
 
         h2 i {
             color: var(--accent-color);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         p {
             margin-bottom: 1rem;
             color: var(--text-color);
+            font-size: 0.95rem;
         }
 
-        /* Research Interests Tags */
+        /* Research Interest Tags */
         .interest-tags {
             display: flex;
             flex-wrap: wrap;
@@ -93,23 +169,23 @@
         .tag {
             background-color: var(--tag-bg);
             color: var(--accent-hover);
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             border: 1px solid #d1f2eb;
         }
 
-        /* News & Updates List */
+        /* News List */
         .news-list {
             list-style: none;
         }
 
         .news-item {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            gap: 1.25rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.9rem;
             padding-bottom: 0.75rem;
             border-bottom: 1px dashed var(--border-color);
         }
@@ -123,14 +199,14 @@
         .news-date {
             font-weight: 600;
             color: var(--primary-color);
-            width: 120px;
+            width: 100px;
             flex-shrink: 0;
         }
 
-        /* Publications List with Depth */
+        /* Publications Items */
         .pub-item {
-            margin-bottom: 1.75rem;
-            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
             padding-bottom: 1.25rem;
             border-bottom: 1px solid var(--border-color);
         }
@@ -144,17 +220,13 @@
         .pub-title {
             font-weight: 600;
             color: var(--primary-color);
-            font-size: 1.05rem;
-            margin-bottom: 0.2rem;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
         }
 
         .pub-authors {
             color: var(--text-muted);
             margin-bottom: 0.2rem;
-        }
-
-        .pub-authors strong {
-            color: var(--text-color);
         }
 
         .pub-venue {
@@ -164,7 +236,7 @@
         }
 
         .pub-links {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: flex;
             gap: 0.5rem;
         }
@@ -173,7 +245,7 @@
             color: var(--accent-hover);
             text-decoration: none;
             border: 1px solid var(--border-color);
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 6px;
             background: var(--bg-color);
             font-weight: 500;
@@ -186,80 +258,73 @@
             border-color: var(--accent-color);
         }
 
-        /* Experience Grid */
-        .timeline-item {
-            margin-bottom: 1.25rem;
+        /* ---------------- RIGHT PANE: Profile & Contacts ---------------- */
+        .right-pane {
+            position: sticky;
+            top: 2rem;
         }
 
-        .timeline-title {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .timeline-company {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Right Pane Sidebar Widget */
-        aside {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2.5rem 1.5rem;
+        .profile-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            position: sticky;
-            top: 3rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1.25rem;
-            border: 4px solid var(--bg-color);
+            margin-bottom: 1rem;
+            border: 3px solid var(--bg-color);
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .profile-name {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 0.2rem;
         }
 
         .profile-title {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 1rem;
-            font-weight: 500;
         }
 
-        .profile-bio-short {
+        .contact-details {
             font-size: 0.85rem;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
             text-align: left;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
             width: 100%;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-details div {
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-details i {
+            color: var(--accent-color);
+            width: 14px;
         }
 
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+            gap: 0.8rem;
+            justify-content: center;
+            width: 100%;
         }
 
         .social-links a {
             color: var(--text-muted);
+            font-size: 1.1rem;
             transition: color 0.2s;
         }
 
@@ -267,111 +332,111 @@
             color: var(--accent-color);
         }
 
-        .nav-menu {
-            list-style: none;
-            width: 100%;
-            text-align: left;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.25rem;
-        }
-
-        .nav-menu li {
-            margin-bottom: 0.75rem;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-menu a i {
-            width: 16px;
-            color: var(--text-muted);
-        }
-
-        .nav-menu a:hover {
-            color: var(--accent-hover);
-        }
-
-        .nav-menu a:hover i {
-            color: var(--accent-color);
-        }
-
-        /* Responsive Layout for Mobile Devices */
-        @media (max-width: 900px) {
-            .page-container {
-                grid-template-columns: 1fr;
-                padding: 1.5rem 1rem;
+        /* Responsive Breakpoints */
+        @media (max-width: 1100px) {
+            .layout-container {
+                grid-template-columns: 200px 1fr 280px;
+                gap: 1.25rem;
             }
-            aside {
+        }
+
+        @media (max-width: 900px) {
+            .layout-container {
+                grid-template-columns: 1fr;
+            }
+            .left-pane, .right-pane {
                 position: relative;
                 top: 0;
-                order: -1; /* Places the profile card at the top on phones */
+            }
+            .right-pane {
+                order: -1; /* Place profile card at the top on small screens */
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-container">
-        <!-- Main Left Content Pane -->
-        <main>
-            <!-- About Me Section -->
-            <section id="about">
+    <div class="layout-container">
+        
+        <!-- LEFT PANE: Navigation & Metrics -->
+        <aside class="left-pane">
+            <div class="card">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-laptop-code"></i> Jane Doe, Ph.D.
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+                    <li><a href="#news"><i class="fa-solid fa-bullhorn"></i> News</a></li>
+                    <li><a href="#publications"><i class="fa-solid fa-book-open"></i> Publications</a></li>
+                    <li><a href="#teaching"><i class="fa-solid fa-graduation-cap"></i> Teaching</a></li>
+                    <li><a href="#grants"><i class="fa-solid fa-award"></i> Grants</a></li>
+                </ul>
+
+                <div class="quick-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Citations</span>
+                        <span class="stat-value">1,420+</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">h-index</span>
+                        <span class="stat-value">18</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Publications</span>
+                        <span class="stat-value">24</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MIDDLE PANE: Main Academic Stream -->
+        <main class="middle-pane">
+            
+            <!-- Bio Section -->
+            <section id="about" class="card">
                 <h2><i class="fa-solid fa-user"></i> About Me</h2>
                 <p>I am an Assistant Professor in the Department of Computer Science at University Name, directing the Intelligent Systems & Edge Computing Lab. My core research focuses on bridging the gap between heavy AI models and resource-constrained edge systems, emphasizing efficiency, model compression, and safe human-AI collaboration.</p>
                 <p>Prior to joining University Name, I completed my Ph.D. at Stanford University, where I was honored with the School of Engineering Doctoral Dissertation Award. I regularly serve as a program committee member and reviewer for top-tier tracks including NeurIPS, ICML, CVPR, and CHI.</p>
                 
-                <div style="margin-top: 1.5rem;">
-                    <strong style="font-size: 0.9rem; color: var(--primary-color);">Research Focus Areas:</strong>
+                <div style="margin-top: 1rem;">
+                    <strong style="font-size: 0.85rem; color: var(--primary-color);">Research Focus:</strong>
                     <div class="interest-tags">
                         <span class="tag">Artificial Intelligence</span>
                         <span class="tag">Edge Computing</span>
                         <span class="tag">Deep Learning Optimization</span>
                         <span class="tag">Human-Computer Interaction</span>
-                        <span class="tag">Distributed Systems</span>
                     </div>
                 </div>
             </section>
 
-            <!-- News & Updates Section -->
-            <section id="news">
-                <h2><i class="fa-solid fa-bullhorn"></i> News & Updates</h2>
+            <!-- News Section -->
+            <section id="news" class="card">
+                <h2><i class="fa-solid fa-bullhorn"></i> Recent News</h2>
                 <ul class="news-list">
                     <li class="news-item">
-                        <span class="news-date">August 2026</span>
-                        <span>One paper accepted as an Oral presentation at NeurIPS 2026! Looking forward to visiting San Diego.</span>
+                        <span class="news-date">Aug 2026</span>
+                        <span>One paper accepted as an Oral presentation at NeurIPS 2026! See you in San Diego.</span>
                     </li>
                     <li class="news-item">
-                        <span class="news-date">June 2026</span>
-                        <span>Delivering an invited keynote talk on energy-efficient neural networks at the Global AI Symposium.</span>
+                        <span class="news-date">Jun 2026</span>
+                        <span>Delivering an invited keynote talk on energy-efficient neural networks at the AI Summit.</span>
                     </li>
                     <li class="news-item">
-                        <span class="news-date">January 2026</span>
-                        <span>Awarded a new 3-year collaborative grant from the National Science Foundation (NSF) for edge intelligence research.</span>
-                    </li>
-                    <li class="news-item">
-                        <span class="news-date">September 2025</span>
-                        <span>Welcoming two new Ph.D. students and one postdoctoral researcher to our lab group.</span>
+                        <span class="news-date">Jan 2026</span>
+                        <span>Awarded a new 3-year collaborative grant from the National Science Foundation (NSF).</span>
                     </li>
                 </ul>
             </section>
 
-            <!-- Selected Publications Section -->
-            <section id="publications">
+            <!-- Publications Section -->
+            <section id="publications" class="card">
                 <h2><i class="fa-solid fa-book-open"></i> Selected Publications</h2>
                 
                 <div class="pub-item">
                     <div class="pub-title">Efficient Transformers for Real-Time Edge Computing Systems</div>
-                    <div class="pub-authors"><strong>Jane Doe</strong>, John Smith, Alice Johnson, Robert Lee</div>
+                    <div class="pub-authors">Jane Doe, John Smith, Alice Johnson, Robert Lee</div>
                     <div class="pub-venue">Conference on Neural Information Processing Systems (NeurIPS), 2025</div>
-                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-muted);">Introduces a novel quantization framework reducing transformer memory footprint by 64% without accuracy degradation on edge chips.</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Introduces a novel quantization framework reducing transformer memory footprint by 64% on edge chips.</p>
                     <div class="pub-links">
                         <a href="#"><i class="fa-regular fa-file-pdf"></i> PDF</a>
                         <a href="#"><i class="fa-brands fa-github"></i> Code</a>
@@ -381,77 +446,48 @@
 
                 <div class="pub-item">
                     <div class="pub-title">Human-AI Collaboration Pipelines in Creative Content Generation</div>
-                    <div class="pub-authors">Alice Johnson, <strong>Jane Doe</strong>, Michael Chen</div>
+                    <div class="pub-authors">Alice Johnson, Jane Doe, Michael Chen</div>
                     <div class="pub-venue">ACM Conference on Human Factors in Computing Systems (CHI), 2025</div>
-                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-muted);">Empirical study analyzing cognitive load and productivity metrics across mixed-initiative writing workflows.</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Empirical study analyzing cognitive load and productivity metrics across mixed-initiative writing workflows.</p>
                     <div class="pub-links">
                         <a href="#"><i class="fa-regular fa-file-pdf"></i> PDF</a>
                         <a href="#"><i class="fa-solid fa-quote-left"></i> BibTeX</a>
                     </div>
                 </div>
-
-                <div class="pub-item">
-                    <div class="pub-title">Adaptive Distributed Training Under Network Constraints</div>
-                    <div class="pub-authors"><strong>Jane Doe</strong>, Sarah Connor</div>
-                    <div class="pub-venue">International Conference on Machine Learning (ICML), 2024</div>
-                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-muted);">Presents a decentralized gradient compression scheme optimized for high-latency distributed node networks.</p>
-                    <div class="pub-links">
-                        <a href="#"><i class="fa-regular fa-file-pdf"></i> PDF</a>
-                        <a href="#"><i class="fa-brands fa-github"></i> Code</a>
-                        <a href="#"><i class="fa-solid fa-quote-left"></i> BibTeX</a>
-                    </div>
-                </div>
             </section>
 
-            <!-- Teaching & Experience Section -->
-            <section id="teaching">
-                <h2><i class="fa-solid fa-graduation-cap"></i> Teaching & Experience</h2>
-                <div style="margin-bottom: 1.5rem;">
-                    <h3 style="font-size: 1.05rem; color: var(--primary-color); margin-bottom: 0.75rem;">Current Courses</h3>
-                    <p><strong>CS 101: Introduction to Computer Science</strong> — Fall 2025, Fall 2026<br><span style="font-size: 0.85rem; color: var(--text-muted);">Core undergraduate course covering data structures, algorithmic thinking, and basic computational paradigms.</span></p>
-                    <p><strong>CS 204: Advanced Machine Learning Systems</strong> — Spring 2026<br><span style="font-size: 0.85rem; color: var(--text-muted);">Graduate-level seminar exploring model parallelization, distributed optimization, and hardware acceleration.</span></p>
-                </div>
-
-                <div>
-                    <h3 style="font-size: 1.05rem; color: var(--primary-color); margin-bottom: 0.75rem;">Academic Experience</h3>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Assistant Professor of Computer Science</div>
-                        <div class="timeline-company">University Name • 2024 – Present</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Postdoctoral Research Fellow</div>
-                        <div class="timeline-company">UC Berkeley • 2023 – 2024</div>
-                    </div>
-                </div>
+            <!-- Teaching Section -->
+            <section id="teaching" class="card">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Teaching</h2>
+                <p><strong>CS 101: Introduction to Computer Science</strong> — Fall 2025, Fall 2026</p>
+                <p><strong>CS 204: Advanced Machine Learning Systems</strong> — Spring 2026</p>
             </section>
+
         </main>
 
-        <!-- Right Pane Profile Widget -->
-        <aside>
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Profile Picture" class="profile-img">
-            <h1 class="profile-name">Dr. Jane Doe</h1>
-            <p class="profile-title">Assistant Professor</p>
-            
-            <div class="profile-bio-short">
-                <strong>Office:</strong> Hall of Engineering, Rm 402<br>
-                <strong>Email:</strong> jane.doe@university.edu<br>
-                <strong>Lab:</strong> Intelligent Systems & Edge Computing Group
-            </div>
-            
-            <div class="social-links">
-                <a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:jane.doe@university.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
-            </div>
+        <!-- RIGHT PANE: Profile Summary & Office Details -->
+        <aside class="right-pane">
+            <div class="card profile-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Profile Picture" class="profile-img">
+                <h1 class="profile-name">Dr. Jane Doe</h1>
+                <p class="profile-title">Assistant Professor of CS</p>
+                
+                <div class="contact-details">
+                    <div><i class="fa-solid fa-building"></i> Hall of Engineering, Rm 402</div>
+                    <div><i class="fa-solid fa-envelope"></i> jane.doe@university.edu</div>
+                    <div><i class="fa-solid fa-flask"></i> Intelligent Systems Lab</div>
+                    <div><i class="fa-solid fa-clock"></i> Office Hours: Tue 2–4 PM</div>
+                </div>
 
-            <ul class="nav-menu">
-                <li><a href="#about"><i class="fa-solid fa-user"></i> About Me</a></li>
-                <li><a href="#news"><i class="fa-solid fa-bullhorn"></i> News</a></li>
-                <li><a href="#publications"><i class="fa-solid fa-book-open"></i> Publications</a></li>
-                <li><a href="#teaching"><i class="fa-solid fa-graduation-cap"></i> Teaching</a></li>
-            </ul>
+                <div class="social-links">
+                    <a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+                    <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:jane.doe@university.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
         </aside>
+
     </div>
 
 </body>
