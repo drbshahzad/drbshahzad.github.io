@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Jane Doe | Academic Portal</title>
+    <title>Dr. Jane Doe | Academic Profile</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,6 +27,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-color);
@@ -34,14 +38,14 @@
             line-height: 1.7;
         }
 
-        /* Three-Column Grid Layout */
+        /* Two-Column Master Layout */
         .layout-container {
-            max-width: 1400px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             display: grid;
-            grid-template-columns: 240px 1fr 320px;
-            gap: 2rem;
+            grid-template-columns: 320px 1fr;
+            gap: 2.5rem;
             align-items: start;
         }
 
@@ -50,36 +54,94 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.75rem;
+            padding: 2rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        /* ---------------- LEFT PANE: Navigation & Quick Links ---------------- */
+        /* ================= LEFT PANE: Profile & Nav ================= */
         .left-pane {
             position: sticky;
             top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
-        .brand-logo {
-            font-size: 1.1rem;
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.25rem;
+            border: 4px solid var(--bg-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+        }
+
+        .profile-name {
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .brand-logo i {
+        .profile-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .contact-details {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: left;
+            width: 100%;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-details div {
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .contact-details i {
+            color: var(--accent-color);
+            width: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
             color: var(--accent-color);
         }
 
         .nav-menu {
             list-style: none;
+            width: 100%;
+            text-align: left;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.25rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .nav-menu a {
@@ -87,8 +149,8 @@
             color: var(--text-color);
             font-weight: 500;
             font-size: 0.9rem;
-            padding: 0.6rem 0.8rem;
-            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -109,47 +171,25 @@
             color: var(--accent-color);
         }
 
-        .quick-stats {
-            margin-top: 1.5rem;
-            padding-top: 1.25rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .stat-item {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-        }
-
-        .stat-value {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        /* ---------------- MIDDLE PANE: Primary Stream ---------------- */
-        .middle-pane {
-            min-width: 0; /* Prevents overflow in CSS grid */
+        /* ================= RIGHT PANE: Main Content & Visual Statistics ================= */
+        .right-pane {
+            min-width: 0; /* Prevents overflow in grid layout */
         }
 
         h2 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-color);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         h2 i {
             color: var(--accent-color);
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         p {
@@ -169,11 +209,98 @@
         .tag {
             background-color: var(--tag-bg);
             color: var(--accent-hover);
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
             border: 1px solid #d1f2eb;
+        }
+
+        /* VISUAL METRICS / STATISTICS SECTION */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-color);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-hover);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* Citation Growth Visual Bar Chart */
+        .chart-container {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .chart-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 120px;
+            padding-top: 1rem;
+            gap: 0.75rem;
+        }
+
+        .bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        .bar {
+            width: 100%;
+            background-color: var(--accent-color);
+            border-radius: 4px 4px 0 0;
+            transition: height 0.3s ease;
+            position: relative;
+        }
+
+        .bar:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .bar-value {
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--primary-color);
+        }
+
+        .bar-year {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 6px;
         }
 
         /* News List */
@@ -183,9 +310,9 @@
 
         .news-item {
             display: flex;
-            gap: 1.25rem;
-            margin-bottom: 0.85rem;
-            font-size: 0.9rem;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
             padding-bottom: 0.75rem;
             border-bottom: 1px dashed var(--border-color);
         }
@@ -199,14 +326,14 @@
         .news-date {
             font-weight: 600;
             color: var(--primary-color);
-            width: 100px;
+            width: 110px;
             flex-shrink: 0;
         }
 
-        /* Publications Items */
+        /* Publications Section */
         .pub-item {
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.75rem;
+            font-size: 0.95rem;
             padding-bottom: 1.25rem;
             border-bottom: 1px solid var(--border-color);
         }
@@ -220,7 +347,7 @@
         .pub-title {
             font-weight: 600;
             color: var(--primary-color);
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin-bottom: 0.25rem;
         }
 
@@ -236,7 +363,7 @@
         }
 
         .pub-links {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             display: flex;
             gap: 0.5rem;
         }
@@ -245,7 +372,7 @@
             color: var(--accent-hover);
             text-decoration: none;
             border: 1px solid var(--border-color);
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 6px;
             background: var(--bg-color);
             font-weight: 500;
@@ -258,98 +385,20 @@
             border-color: var(--accent-color);
         }
 
-        /* ---------------- RIGHT PANE: Profile & Contacts ---------------- */
-        .right-pane {
-            position: sticky;
-            top: 2rem;
-        }
-
-        .profile-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 3px solid var(--bg-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .profile-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .profile-title {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .contact-details {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-align: left;
-            width: 100%;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-            margin-bottom: 1.25rem;
-        }
-
-        .contact-details div {
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-details i {
-            color: var(--accent-color);
-            width: 14px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 0.8rem;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 1100px) {
-            .layout-container {
-                grid-template-columns: 200px 1fr 280px;
-                gap: 1.25rem;
-            }
-        }
-
+        /* Responsive Mobile Layout */
         @media (max-width: 900px) {
             .layout-container {
                 grid-template-columns: 1fr;
+                padding: 1.5rem 1rem;
             }
-            .left-pane, .right-pane {
+
+            .left-pane {
                 position: relative;
                 top: 0;
             }
-            .right-pane {
-                order: -1; /* Place profile card at the top on small screens */
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -358,39 +407,37 @@
 
     <div class="layout-container">
         
-        <!-- LEFT PANE: Navigation & Metrics -->
-        <aside class="left-pane">
-            <div class="card">
-                <div class="brand-logo">
-                    <i class="fa-solid fa-laptop-code"></i> Jane Doe, Ph.D.
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
-                    <li><a href="#news"><i class="fa-solid fa-bullhorn"></i> News</a></li>
-                    <li><a href="#publications"><i class="fa-solid fa-book-open"></i> Publications</a></li>
-                    <li><a href="#teaching"><i class="fa-solid fa-graduation-cap"></i> Teaching</a></li>
-                    <li><a href="#grants"><i class="fa-solid fa-award"></i> Grants</a></li>
-                </ul>
-
-                <div class="quick-stats">
-                    <div class="stat-item">
-                        <span class="stat-label">Citations</span>
-                        <span class="stat-value">1,420+</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">h-index</span>
-                        <span class="stat-value">18</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Publications</span>
-                        <span class="stat-value">24</span>
-                    </div>
-                </div>
+        <!-- ================= LEFT PANE ================= -->
+        <aside class="card left-pane">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Profile Picture" class="profile-img">
+            <h1 class="profile-name">Dr. Jane Doe</h1>
+            <p class="profile-title">Assistant Professor of Computer Science</p>
+            
+            <div class="contact-details">
+                <div><i class="fa-solid fa-building"></i> Hall of Engineering, Rm 402</div>
+                <div><i class="fa-solid fa-envelope"></i> jane.doe@university.edu</div>
+                <div><i class="fa-solid fa-flask"></i> Intelligent Systems Lab</div>
+                <div><i class="fa-solid fa-clock"></i> Hours: Tue 2:00 – 4:00 PM</div>
             </div>
+
+            <div class="social-links">
+                <a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+                <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:jane.doe@university.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#about"><i class="fa-solid fa-user"></i> About Me</a></li>
+                <li><a href="#statistics"><i class="fa-solid fa-chart-line"></i> Research Impact</a></li>
+                <li><a href="#news"><i class="fa-solid fa-bullhorn"></i> News & Updates</a></li>
+                <li><a href="#publications"><i class="fa-solid fa-book-open"></i> Publications</a></li>
+                <li><a href="#teaching"><i class="fa-solid fa-graduation-cap"></i> Teaching</a></li>
+            </ul>
         </aside>
 
-        <!-- MIDDLE PANE: Main Academic Stream -->
-        <main class="middle-pane">
+        <!-- ================= RIGHT PANE ================= -->
+        <main class="right-pane">
             
             <!-- Bio Section -->
             <section id="about" class="card">
@@ -398,45 +445,103 @@
                 <p>I am an Assistant Professor in the Department of Computer Science at University Name, directing the Intelligent Systems & Edge Computing Lab. My core research focuses on bridging the gap between heavy AI models and resource-constrained edge systems, emphasizing efficiency, model compression, and safe human-AI collaboration.</p>
                 <p>Prior to joining University Name, I completed my Ph.D. at Stanford University, where I was honored with the School of Engineering Doctoral Dissertation Award. I regularly serve as a program committee member and reviewer for top-tier tracks including NeurIPS, ICML, CVPR, and CHI.</p>
                 
-                <div style="margin-top: 1rem;">
-                    <strong style="font-size: 0.85rem; color: var(--primary-color);">Research Focus:</strong>
+                <div style="margin-top: 1.25rem;">
+                    <strong style="font-size: 0.9rem; color: var(--primary-color);">Research Focus Areas:</strong>
                     <div class="interest-tags">
                         <span class="tag">Artificial Intelligence</span>
                         <span class="tag">Edge Computing</span>
                         <span class="tag">Deep Learning Optimization</span>
                         <span class="tag">Human-Computer Interaction</span>
+                        <span class="tag">Distributed Systems</span>
                     </div>
                 </div>
             </section>
 
-            <!-- News Section -->
+            <!-- Visual Statistics & Achievements Section -->
+            <section id="statistics" class="card">
+                <h2><i class="fa-solid fa-chart-line"></i> Research Achievement Statistics</h2>
+                
+                <!-- Stat Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1,420+</div>
+                        <div class="stat-label">Citations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">h-index</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$1.2M</div>
+                        <div class="stat-label">Grant Funding</div>
+                    </div>
+                </div>
+
+                <!-- Visual Citation Growth Bar Chart -->
+                <div class="chart-container">
+                    <div class="chart-title"><i class="fa-solid fa-arrow-trend-up" style="color: var(--accent-color);"></i> Citation Trajectory (2022–2026)</div>
+                    <div class="bar-chart">
+                        <div class="bar-wrapper">
+                            <span class="bar-value">120</span>
+                            <div class="bar" style="height: 25%;"></div>
+                            <span class="bar-year">2022</span>
+                        </div>
+                        <div class="bar-wrapper">
+                            <span class="bar-value">210</span>
+                            <div class="bar" style="height: 40%;"></div>
+                            <span class="bar-year">2023</span>
+                        </div>
+                        <div class="bar-wrapper">
+                            <span class="bar-value">340</span>
+                            <div class="bar" style="height: 60%;"></div>
+                            <span class="bar-year">2024</span>
+                        </div>
+                        <div class="bar-wrapper">
+                            <span class="bar-value">480</span>
+                            <div class="bar" style="height: 80%;"></div>
+                            <span class="bar-year">2025</span>
+                        </div>
+                        <div class="bar-wrapper">
+                            <span class="bar-value">610</span>
+                            <div class="bar" style="height: 100%;"></div>
+                            <span class="bar-year">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News & Updates Section -->
             <section id="news" class="card">
-                <h2><i class="fa-solid fa-bullhorn"></i> Recent News</h2>
+                <h2><i class="fa-solid fa-bullhorn"></i> News & Updates</h2>
                 <ul class="news-list">
                     <li class="news-item">
-                        <span class="news-date">Aug 2026</span>
-                        <span>One paper accepted as an Oral presentation at NeurIPS 2026! See you in San Diego.</span>
+                        <span class="news-date">August 2026</span>
+                        <span>One paper accepted as an Oral presentation at NeurIPS 2026! Looking forward to San Diego.</span>
                     </li>
                     <li class="news-item">
-                        <span class="news-date">Jun 2026</span>
-                        <span>Delivering an invited keynote talk on energy-efficient neural networks at the AI Summit.</span>
+                        <span class="news-date">June 2026</span>
+                        <span>Delivering an invited keynote talk on energy-efficient neural networks at the Global AI Symposium.</span>
                     </li>
                     <li class="news-item">
-                        <span class="news-date">Jan 2026</span>
-                        <span>Awarded a new 3-year collaborative grant from the National Science Foundation (NSF).</span>
+                        <span class="news-date">January 2026</span>
+                        <span>Awarded a new 3-year collaborative grant from the National Science Foundation (NSF) for edge intelligence research.</span>
                     </li>
                 </ul>
             </section>
 
-            <!-- Publications Section -->
+            <!-- Selected Publications Section -->
             <section id="publications" class="card">
                 <h2><i class="fa-solid fa-book-open"></i> Selected Publications</h2>
                 
                 <div class="pub-item">
                     <div class="pub-title">Efficient Transformers for Real-Time Edge Computing Systems</div>
-                    <div class="pub-authors">Jane Doe, John Smith, Alice Johnson, Robert Lee</div>
+                    <div class="pub-authors"><strong>Jane Doe</strong>, John Smith, Alice Johnson, Robert Lee</div>
                     <div class="pub-venue">Conference on Neural Information Processing Systems (NeurIPS), 2025</div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Introduces a novel quantization framework reducing transformer memory footprint by 64% on edge chips.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-muted);">Introduces a novel quantization framework reducing transformer memory footprint by 64% without accuracy loss.</p>
                     <div class="pub-links">
                         <a href="#"><i class="fa-regular fa-file-pdf"></i> PDF</a>
                         <a href="#"><i class="fa-brands fa-github"></i> Code</a>
@@ -446,9 +551,9 @@
 
                 <div class="pub-item">
                     <div class="pub-title">Human-AI Collaboration Pipelines in Creative Content Generation</div>
-                    <div class="pub-authors">Alice Johnson, Jane Doe, Michael Chen</div>
+                    <div class="pub-authors">Alice Johnson, <strong>Jane Doe</strong>, Michael Chen</div>
                     <div class="pub-venue">ACM Conference on Human Factors in Computing Systems (CHI), 2025</div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Empirical study analyzing cognitive load and productivity metrics across mixed-initiative writing workflows.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-muted);">Empirical study analyzing cognitive load and productivity metrics across mixed-initiative writing workflows.</p>
                     <div class="pub-links">
                         <a href="#"><i class="fa-regular fa-file-pdf"></i> PDF</a>
                         <a href="#"><i class="fa-solid fa-quote-left"></i> BibTeX</a>
@@ -459,34 +564,11 @@
             <!-- Teaching Section -->
             <section id="teaching" class="card">
                 <h2><i class="fa-solid fa-graduation-cap"></i> Teaching</h2>
-                <p><strong>CS 101: Introduction to Computer Science</strong> — Fall 2025, Fall 2026</p>
-                <p><strong>CS 204: Advanced Machine Learning Systems</strong> — Spring 2026</p>
+                <p><strong>CS 101: Introduction to Computer Science</strong> — Fall 2025, Fall 2026<br><span style="font-size: 0.85rem; color: var(--text-muted);">Core undergraduate course covering data structures and algorithmic thinking.</span></p>
+                <p><strong>CS 204: Advanced Machine Learning Systems</strong> — Spring 2026<br><span style="font-size: 0.85rem; color: var(--text-muted);">Graduate seminar exploring model parallelization and hardware acceleration.</span></p>
             </section>
 
         </main>
-
-        <!-- RIGHT PANE: Profile Summary & Office Details -->
-        <aside class="right-pane">
-            <div class="card profile-card">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Profile Picture" class="profile-img">
-                <h1 class="profile-name">Dr. Jane Doe</h1>
-                <p class="profile-title">Assistant Professor of CS</p>
-                
-                <div class="contact-details">
-                    <div><i class="fa-solid fa-building"></i> Hall of Engineering, Rm 402</div>
-                    <div><i class="fa-solid fa-envelope"></i> jane.doe@university.edu</div>
-                    <div><i class="fa-solid fa-flask"></i> Intelligent Systems Lab</div>
-                    <div><i class="fa-solid fa-clock"></i> Office Hours: Tue 2–4 PM</div>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                    <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="mailto:jane.doe@university.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                </div>
-            </div>
-        </aside>
 
     </div>
 
