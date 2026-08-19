@@ -690,8 +690,8 @@
         <!-- LEFT PANE -->
         <aside class="card left-pane">
             <div class="profile-img-container">
-                <a href="https://"mg src="images/1783513450691.jfif" target="_blank" class="profile-img-link" title="View Profile Image">
-                    <img id="profile-img-element" src="https://pmqu-my.sharepoint.com/:i:/g/personal/b_shahzad_upm_edu_sa/IQCSr9taPIpRSLRIrdBbt-bzAb9dv0l9O17G9in063ZSD5I?e=6IDp9u&download=1" alt="Dr. Basit Shahzad" class="profile-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/140?text=Dr.+Basit';">
+                <a href="#" class="profile-img-link" title="View Profile Image">
+                    <img id="profile-img-element" src="images/1783513450691.jfif" alt="Dr. Basit Shahzad" class="profile-img">
                 </a>
                 <label for="img-file-input" class="img-upload-overlay">
                     <i class="fa-solid fa-camera"></i> Change
@@ -774,92 +774,7 @@
                     </div>
                 </section>
 
-                <!-- NEWS AND UPDATES SECTION -->
-                <section class="card dynamic-section" id="sec-news-updates">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-newspaper"></i> <span class="sec-title-text">News & Updates</span></span>
-                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
-                    </h2>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <span class="news-date">Jan 2026</span>
-                            <div class="news-content">New paper accepted on empirical software metrics and cost estimation modeling.</div>
-                        </div>
-                        <div class="news-item">
-                            <span class="news-date">Nov 2025</span>
-                            <div class="news-content">Delivered a keynote talk on Blockchain Applications in Secure E-Voting Systems.</div>
-                        </div>
-                        <div class="news-item">
-                            <span class="news-date">Sep 2025</span>
-                            <div class="news-content">Welcomed new Ph.D. and Master's research students to the Software Engineering Lab for Fall 2025.</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- TEACHING SECTION -->
-                <section class="card dynamic-section" id="sec-teaching-main">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-chalkboard-user"></i> <span class="sec-title-text">Teaching</span></span>
-                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
-                    </h2>
-                    <p>Courses taught across undergraduate and postgraduate software engineering programs:</p>
-                    <div class="courses-grid">
-                        <div class="course-card">
-                            <div class="course-code">SWE 301</div>
-                            <div class="course-title">Advanced Software Engineering</div>
-                            <p class="course-desc">Core concepts in modern software design paradigms, architectural patterns, and full-lifecycle software delivery models.</p>
-                        </div>
-                        <div class="course-card">
-                            <div class="course-code">SWE 410</div>
-                            <div class="course-title">Software Risk Management & Metrics</div>
-                            <p class="course-desc">Quantitative software metrics, risk identification strategies, mitigation techniques, and empirical cost estimation models.</p>
-                        </div>
-                        <div class="course-card">
-                            <div class="course-code">CS 502</div>
-                            <div class="course-title">Blockchain Architecture & Applications</div>
-                            <p class="course-desc">Distributed consensus mechanisms, smart contract engineering, and decentralized system designs for secure e-voting.</p>
-                        </div>
-                        <div class="course-card">
-                            <div class="course-code">CS 601</div>
-                            <div class="course-title">Empirical Research Methods in SE</div>
-                            <p class="course-desc">Advanced graduate-level study focusing on qualitative, quantitative, and systematic literature review methodologies in software engineering.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- RESEARCH STATISTICS SECTION -->
-                <section class="card dynamic-section" id="sec-statistics">
-                    <div class="stats-header">
-                        <h2>
-                            <span class="header-title-text"><i class="fa-solid fa-chart-line"></i> <span class="sec-title-text">Research Impact & Statistics</span></span>
-                        </h2>
-                        <span class="live-badge"><span class="live-dot"></span> Google Scholar Auto-Sync</span>
-                    </div>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number" id="stat-citations">2,927+</div>
-                            <div class="stat-label">Citations</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="stat-hindex">28</div>
-                            <div class="stat-label">h-index</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="stat-i10index">54</div>
-                            <div class="stat-label">i10-index</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" id="stat-publications">90+</div>
-                            <div class="stat-label">Publications</div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.8rem; color: var(--text-muted); text-align: right; margin-bottom: 0;">
-                        <i class="fa-solid fa-arrows-rotate"></i> Dynamic metrics synced from <a href="https://scholar.google.com/citations?user=c7iengMAAAAJ" target="_blank" style="color: var(--accent-hover);">Google Scholar ID: c7iengMAAAAJ</a>
-                    </p>
-                </section>
-
-                <!-- PUBLICATIONS SECTION (DISPLAYING 4 PUBLICATIONS) -->
+                <!-- PUBLICATIONS SECTION -->
                 <section class="card dynamic-section" id="sec-publications">
                     <h2>
                         <span class="header-title-text"><i class="fa-solid fa-book-open"></i> <span class="sec-title-text">Selected Publications</span></span>
@@ -867,180 +782,126 @@
                     </h2>
                     
                     <div class="publications-container" id="pub-list-container">
-                        <!-- PUBLICATION 1 -->
                         <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <div class="pub-title">Trust-Based Security and Risk Evaluation Framework for Cloud Computing Architecture</div>
-                            <div class="pub-authors">Basit Shahzad, E. Al-Makhadmeh, A. Al-Naimi</div>
-                            <div class="pub-venue">IEEE Access, Vol. 8, pp. 112340–112352, 2020.</div>
+                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; top: 0; right: 0;"><i class="fa-solid fa-trash"></i></button>
+                            <div class="pub-title">Empirical evaluation of machine learning algorithms for software cost estimation</div>
+                            <div class="pub-authors">B. Shahzad, et al.</div>
+                            <div class="pub-venue">Journal of Systems and Software, 2025</div>
                             <div class="pub-links">
                                 <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
-                            </div>
-                        </div>
-
-                        <!-- PUBLICATION 2 -->
-                        <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <div class="pub-title">Blockchain-Enabled Secure E-Voting Protocol with Dynamic Transparency Constraints</div>
-                            <div class="pub-authors">Basit Shahzad, S. Khan, M. A. Iqbal</div>
-                            <div class="pub-venue">Journal of Systems and Software, Vol. 175, p. 110912, 2021.</div>
-                            <div class="pub-links">
-                                <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
-                            </div>
-                        </div>
-
-                        <!-- PUBLICATION 3 -->
-                        <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <div class="pub-title">Empirical Cost Estimation and Risk Identification Model for Agile Software Development</div>
-                            <div class="pub-authors">Basit Shahzad, A. Hassan, R. Ahmad</div>
-                            <div class="pub-venue">ACM Transactions on Software Engineering and Methodology (TOSEM), Vol. 31, No. 3, 2022.</div>
-                            <div class="pub-links">
-                                <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
-                            </div>
-                        </div>
-
-                        <!-- PUBLICATION 4 -->
-                        <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <div class="pub-title">Social Media Sentiment Analysis for Public Health Event Monitoring and Predictive Risk Assessment</div>
-                            <div class="pub-authors">Basit Shahzad, K. Mahmood, N. Rehman</div>
-                            <div class="pub-venue">Computers in Human Behavior, Vol. 138, p. 107450, 2023.</div>
-                            <div class="pub-links">
-                                <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
+                                <a href="#" target="_blank"><i class="fa-solid fa-quote-left"></i> BibTeX</a>
                             </div>
                         </div>
                     </div>
-
-                    <button class="add-content-btn" onclick="addPublication()"><i class="fa-solid fa-plus"></i> Add New Publication</button>
                 </section>
-
-                <button class="add-content-btn" onclick="addNewSection('main-page')"><i class="fa-solid fa-plus"></i> Add New Section to Main Page</button>
             </div>
 
-            <!-- SECONDARY PAGES -->
+            <!-- TEACHING PAGE -->
             <div id="page-teaching" class="page-view">
-                <section class="card dynamic-section">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-chalkboard-user"></i> <span class="sec-title-text">Teaching & Mentorship</span></span>
-                    </h2>
-                    <p>Detailed breakdown of undergraduate, postgraduate, and professional training modules instructed by Dr. Basit Shahzad.</p>
+                <section class="card">
+                    <h2><span class="header-title-text"><i class="fa-solid fa-chalkboard-user"></i> Teaching Portfolio</span></h2>
+                    <p>Detailed information on courses, office hours, and teaching philosophy.</p>
                 </section>
             </div>
 
+            <!-- BOOKS & APPS PAGE -->
             <div id="page-books-apps" class="page-view">
-                <section class="card dynamic-section">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-mobile-screen-button"></i> <span class="sec-title-text">Books & Applications</span></span>
-                    </h2>
-                    <p>Published textbooks, edited research monographs, software applications, and technological tools developed.</p>
+                <section class="card">
+                    <h2><span class="header-title-text"><i class="fa-solid fa-mobile-screen-button"></i> Books and Apps</span></h2>
+                    <p>Authored books, textbooks, and software applications developed for research and industry.</p>
                 </section>
             </div>
 
+            <!-- RESEARCH & SUPERVISION PAGE -->
             <div id="page-research-supervision" class="page-view">
-                <section class="card dynamic-section">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-user-graduate"></i> <span class="sec-title-text">Research Supervision</span></span>
-                    </h2>
-                    <p>Overview of Ph.D., Master's, and Senior Capstone projects mentored under the Software Engineering Lab.</p>
+                <section class="card">
+                    <h2><span class="header-title-text"><i class="fa-solid fa-user-graduate"></i> Research & Supervision</span></h2>
+                    <p>Current and past graduate students, theses supervision records, and lab grants.</p>
                 </section>
             </div>
 
+            <!-- CONFERENCES PAGE -->
             <div id="page-conferences" class="page-view">
-                <section class="card dynamic-section">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-users-rectangle"></i> <span class="sec-title-text">Conferences & Workshops</span></span>
-                    </h2>
-                    <p>Keynote addresses, program committee roles, conference presentations, and panel discussions.</p>
+                <section class="card">
+                    <h2><span class="header-title-text"><i class="fa-solid fa-users-rectangle"></i> Conferences and Workshops</span></h2>
+                    <p>Invited talks, keynote presentations, and organizing committee memberships.</p>
                 </section>
             </div>
 
+            <!-- NEWS PAGE -->
             <div id="page-news" class="page-view">
-                <section class="card dynamic-section">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-newspaper"></i> <span class="sec-title-text">News & Updates Archive</span></span>
-                    </h2>
-                    <p>Complete historical timeline of academic announcements, press releases, and major project milestones.</p>
+                <section class="card">
+                    <h2><span class="header-title-text"><i class="fa-solid fa-newspaper"></i> News and Updates Archive</span></h2>
+                    <p>Comprehensive historical updates regarding grants, awards, and lab milestones.</p>
                 </section>
             </div>
 
         </main>
     </div>
 
-    <!-- ADMIN CONTROLLER PANEL -->
+    <!-- ADMIN PANEL FLOATING WIDGET -->
     <div id="admin-panel">
-        <button class="panel-toggle" onclick="toggleAdminPanel()">
-            <i class="fa-solid fa-gear"></i> Control Panel
-        </button>
         <div class="panel-content" id="panel-content">
-            <div class="panel-section-title">Page Controls</div>
+            <div class="panel-section-title">Profile Controls</div>
             <button class="action-btn btn-edit" id="toggle-edit-btn" onclick="toggleEditMode()">
                 <i class="fa-solid fa-pen-to-square"></i> Enable Edit Mode
             </button>
         </div>
+        <button class="panel-toggle" onclick="togglePanel()">
+            <i class="fa-solid fa-gear"></i> Admin Panel
+        </button>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        let isEditMode = false;
-
-        function toggleAdminPanel() {
-            const panel = document.getElementById('panel-content');
-            panel.classList.toggle('active');
-        }
-
-        function switchPage(pageId, linkElement) {
-            const pages = document.querySelectorAll('.page-view');
-            pages.forEach(p => p.classList.remove('active-page'));
-
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active-page');
-            }
-
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (linkElement) {
-                linkElement.classList.add('active');
-            }
+        function togglePanel() {
+            document.getElementById('panel-content').classList.toggle('active');
         }
 
         function toggleEditMode() {
-            isEditMode = !isEditMode;
             const body = document.body;
+            if (!body.classList.contains('edit-mode-active')) {
+                const password = prompt("Enter password to enable edit mode:");
+                if (password !== "admin123") {
+                    alert("Incorrect password!");
+                    return;
+                }
+            }
+            body.classList.toggle('edit-mode-active');
             const btn = document.getElementById('toggle-edit-btn');
-
-            if (isEditMode) {
-                body.classList.add('edit-mode-active');
+            
+            if (body.classList.contains('edit-mode-active')) {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Save Changes';
                 btn.className = 'action-btn btn-save';
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Exit Edit Mode';
-                makeElementsEditable(true);
+                makeEditable(true);
             } else {
-                body.classList.remove('edit-mode-active');
-                btn.className = 'action-btn btn-edit';
                 btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Enable Edit Mode';
-                makeElementsEditable(false);
+                btn.className = 'action-btn btn-edit';
+                makeEditable(false);
             }
         }
 
-        function makeElementsEditable(enable) {
-            const selectors = [
-                '#editable-name', '#editable-title', '#editable-university',
-                '#editable-location', '#editable-email', '#editable-lab',
-                '.sec-title-text', '.sec-body-text', '.pub-title',
-                '.pub-authors', '.pub-venue', '.course-title', '.course-desc',
-                '.news-content', '.stat-number'
+        function makeEditable(enable) {
+            const fields = [
+                'editable-name', 'editable-title', 'editable-university',
+                'editable-location', 'editable-email', 'editable-lab'
             ];
-
-            selectors.forEach(selector => {
-                document.querySelectorAll(selector).forEach(el => {
-                    el.contentEditable = enable ? "true" : "false";
-                });
+            fields.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.setAttribute('contenteditable', enable);
             });
+            
+            document.querySelectorAll('.sec-body-text, .pub-title, .pub-authors, .pub-venue').forEach(el => {
+                el.setAttribute('contenteditable', enable);
+            });
+        }
+
+        function switchPage(pageId, element) {
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active-page'));
+            document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+            
+            document.getElementById(pageId).classList.add('active-page');
+            element.classList.add('active');
         }
 
         function handleImageUpload(event) {
@@ -1049,103 +910,54 @@
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     document.getElementById('profile-img-element').src = e.target.result;
-                };
+                }
                 reader.readAsDataURL(file);
             }
         }
 
         function deleteSection(btn) {
             if (confirm("Are you sure you want to delete this section?")) {
-                const section = btn.closest('.dynamic-section');
-                if (section) section.remove();
+                btn.closest('.dynamic-section').remove();
             }
         }
 
         function deletePublication(btn) {
-            if (confirm("Are you sure you want to delete this publication?")) {
-                const item = btn.closest('.pub-item');
-                if (item) item.remove();
+            if (confirm("Delete this publication entry?")) {
+                btn.closest('.pub-item').remove();
             }
         }
 
         function deletePage(pageId, btn) {
-            if (confirm("Are you sure you want to delete this entire page?")) {
-                const page = document.getElementById(pageId);
-                if (page) page.remove();
-                const navItem = btn.closest('.nav-item-wrapper');
-                if (navItem) navItem.remove();
+            if (confirm("Are you sure you want to delete this page?")) {
+                document.getElementById(pageId).remove();
+                btn.closest('.nav-item-wrapper').remove();
                 switchPage('main-page', document.querySelector('.nav-menu a'));
             }
         }
 
-        function addPublication() {
-            const container = document.getElementById('pub-list-container');
-            const newItem = document.createElement('div');
-            newItem.className = 'pub-item';
-            newItem.innerHTML = `
-                <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                <div class="pub-title" ${isEditMode ? 'contenteditable="true"' : ''}>New Publication Title Here</div>
-                <div class="pub-authors" ${isEditMode ? 'contenteditable="true"' : ''}>Author Names</div>
-                <div class="pub-venue" ${isEditMode ? 'contenteditable="true"' : ''}>Journal/Conference Venue, Year.</div>
-                <div class="pub-links">
-                    <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-                    <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
-                </div>
-            `;
-            container.appendChild(newItem);
-        }
-
-        function addNewSection(pageId) {
-            const page = document.getElementById(pageId);
-            const newSec = document.createElement('section');
-            newSec.className = 'card dynamic-section';
-            newSec.innerHTML = `
-                <h2>
-                    <span class="header-title-text"><i class="fa-solid fa-folder"></i> <span class="sec-title-text" ${isEditMode ? 'contenteditable="true"' : ''}>New Section Title</span></span>
-                    <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
-                </h2>
-                <div class="sec-body-text" ${isEditMode ? 'contenteditable="true"' : ''}>
-                    <p>Enter section content here...</p>
-                </div>
-            `;
-            page.insertBefore(newSec, page.querySelector('.add-content-btn'));
-        }
-
         function addNewPage() {
-            const pageName = prompt("Enter the name for the new page:");
+            const pageName = prompt("Enter new page title:");
             if (!pageName) return;
-
-            const pageId = 'page-' + pageName.toLowerCase().replace(/[^a-z0-0]/g, '-');
+            const pageId = 'page-' + pageName.toLowerCase().replace(/[^a-z0-9]/g, '-');
             
-            // Create nav item
-            const navContainer = document.getElementById('nav-menu-container');
-            const li = document.createElement('li');
-            li.className = 'nav-item-wrapper';
-            li.innerHTML = `
-                <a onclick="switchPage('${pageId}', this)"><i class="fa-solid fa-file-lines"></i> <span>${pageName}</span></a>
-                <button class="delete-page-btn" onclick="deletePage('${pageId}', this)"><i class="fa-solid fa-trash"></i></button>
-            `;
-            navContainer.appendChild(li);
-
-            // Create page content
+            // Create Page View
             const pagesContainer = document.getElementById('pages-container');
             const newPage = document.createElement('div');
             newPage.id = pageId;
             newPage.className = 'page-view';
-            newPage.innerHTML = `
-                <section class="card dynamic-section">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-file-lines"></i> <span class="sec-title-text" ${isEditMode ? 'contenteditable="true"' : ''}>${pageName}</span></span>
-                    </h2>
-                    <div class="sec-body-text" ${isEditMode ? 'contenteditable="true"' : ''}>
-                        <p>Content for ${pageName} page goes here.</p>
-                    </div>
-                </section>
-                <button class="add-content-btn" onclick="addNewSection('${pageId}')"><i class="fa-solid fa-plus"></i> Add New Section</button>
-            `;
+            newPage.innerHTML = `<section class="card"><h2><span class="header-title-text"><i class="fa-solid fa-file"></i> ${pageName}</span></h2><p>Content goes here...</p></section>`;
             pagesContainer.appendChild(newPage);
 
-            switchPage(pageId, li.querySelector('a'));
+            // Create Nav Link
+            const navContainer = document.getElementById('nav-menu-container');
+            const newLi = document.createElement('li');
+            newLi.className = 'nav-item-wrapper';
+            newLi.innerHTML = `
+                <a onclick="switchPage('${pageId}', this)"><i class="fa-solid fa-file"></i> <span>${pageName}</span></a>
+                <button class="delete-page-btn" onclick="deletePage('${pageId}', this)"><i class="fa-solid fa-trash"></i></button>
+            `;
+            navContainer.appendChild(newLi);
+            switchPage(pageId, newLi.querySelector('a'));
         }
     </script>
 </body>
