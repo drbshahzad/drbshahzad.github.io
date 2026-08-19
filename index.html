@@ -1,213 +1,2317 @@
+take this code, and improve to develop a beutiful academic web site, mainiting these deatisl and adding the left pane, including my pic, links to my social nedis, address, and link to my pages. the existing information should be presented in most appropriate way with good ddesign and layout. 
+
+
+
+HTML
+
+
+
+```
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Basit Shahzad - Academic Profile</title>
+
+    <title>Dr. Basit Shahzad | Academic & Research Profile</title>
+
+    <!-- Google Fonts & FontAwesome Icons -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+
     <style>
+
+        /* Default Theme Variables: Blue Theme */
+
         :root {
-            --primary-color: #1a365d;
-            --accent-color: #2b6cb0;
-            --bg-light: #f7fafc;
-            --text-color: #2d3748;
+
+            --primary-color: #0f172a;
+
+            --accent-color: #2563eb;
+
+            --accent-hover: #1d4ed8;
+
+            --text-color: #1e293b;
+
+            --text-muted: #64748b;
+
+            --bg-color: #f8fafc;
+
+            --card-bg: #ffffff;
+
             --border-color: #e2e8f0;
+
+            --tag-bg: #eff6ff;
+
+            --font-family: 'Inter', sans-serif;
+
         }
+
+
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+
+            font-family: var(--font-family);
+
             color: var(--text-color);
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
+
+            background-color: var(--bg-color);
+
+            line-height: 1.7;
+
+            transition: background-color 0.3s ease, color 0.3s ease;
+
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
+
+
+        /* Two-Column Master Layout */
+
+        .layout-container {
+
+            max-width: 1280px;
+
+            margin: 0 auto;
+
+            padding: 2.5rem 1.5rem;
+
+            display: grid;
+
+            grid-template-columns: 320px 1fr;
+
+            gap: 2.5rem;
+
+            align-items: start;
+
         }
 
-        header {
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+
+
+        /* Common Card & Section Styling */
+
+        .card {
+
+            background: var(--card-bg);
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 12px;
+
+            padding: 2rem;
+
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+
+            margin-bottom: 2rem;
+
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+
+            position: relative;
+
         }
 
-        h1 {
+
+
+        /* ================= LEFT PANE ================= */
+
+        .left-pane {
+
+            position: sticky;
+
+            top: 2rem;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+
+        }
+
+
+
+        .profile-img-container {
+
+            position: relative;
+
+            margin-bottom: 1.25rem;
+
+            width: 140px;
+
+            height: 140px;
+
+        }
+
+
+
+        .profile-img-link {
+
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
+
+            border-radius: 50%;
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        }
+
+
+
+        .profile-img-link:hover {
+
+            transform: scale(1.03);
+
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+
+        }
+
+
+
+        .profile-img {
+
+            width: 100%;
+
+            height: 100%;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 4px solid var(--accent-color);
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+            display: block;
+
+            background-color: var(--border-color);
+
+        }
+
+
+
+        .img-upload-overlay {
+
+            display: none;
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            right: 0;
+
+            background: rgba(0,0,0,0.65);
+
+            color: #fff;
+
+            font-size: 0.75rem;
+
+            padding: 4px;
+
+            border-bottom-left-radius: 70px;
+
+            border-bottom-right-radius: 70px;
+
+            cursor: pointer;
+
+            text-align: center;
+
+        }
+
+
+
+        body.edit-mode-active .img-upload-overlay {
+
+            display: block;
+
+        }
+
+
+
+        .profile-name {
+
+            font-size: 1.3rem;
+
+            font-weight: 700;
+
             color: var(--primary-color);
-            margin-bottom: 5px;
+
         }
+
+
+
+        .profile-title {
+
+            font-size: 0.85rem;
+
+            color: var(--text-muted);
+
+            margin-bottom: 1.25rem;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .contact-details {
+
+            font-size: 0.85rem;
+
+            color: var(--text-muted);
+
+            text-align: left;
+
+            width: 100%;
+
+            padding: 1rem 0;
+
+            border-top: 1px solid var(--border-color);
+
+            border-bottom: 1px solid var(--border-color);
+
+            margin-bottom: 1.25rem;
+
+        }
+
+
+
+        .contact-details div {
+
+            margin-bottom: 0.4rem;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 0.6rem;
+
+        }
+
+
+
+        .contact-details i {
+
+            color: var(--accent-color);
+
+            width: 16px;
+
+        }
+
+
+
+        .social-links {
+
+            display: flex;
+
+            gap: 1rem;
+
+            justify-content: center;
+
+            width: 100%;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+
+
+        .social-links a {
+
+            color: var(--text-muted);
+
+            font-size: 1.2rem;
+
+            transition: color 0.2s;
+
+        }
+
+
+
+        .social-links a:hover {
+
+            color: var(--accent-color);
+
+        }
+
+
+
+        /* NAVIGATION MENU & PAGE NAVIGATION */
+
+        .nav-menu {
+
+            list-style: none;
+
+            width: 100%;
+
+            text-align: left;
+
+            border-top: 1px solid var(--border-color);
+
+            padding-top: 1.25rem;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 0.4rem;
+
+        }
+
+
+
+        .nav-item-wrapper {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            position: relative;
+
+        }
+
+
+
+        .nav-menu a {
+
+            text-decoration: none;
+
+            color: var(--text-color);
+
+            font-weight: 500;
+
+            font-size: 0.9rem;
+
+            padding: 0.5rem 0.75rem;
+
+            border-radius: 6px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 0.75rem;
+
+            transition: all 0.2s ease;
+
+            flex-grow: 1;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .nav-menu a i {
+
+            color: var(--text-muted);
+
+            width: 16px;
+
+        }
+
+
+
+        .nav-menu a.active, .nav-menu a:hover {
+
+            background-color: var(--tag-bg);
+
+            color: var(--accent-hover);
+
+        }
+
+
+
+        .nav-menu a.active i, .nav-menu a:hover i {
+
+            color: var(--accent-color);
+
+        }
+
+
+
+        .delete-page-btn {
+
+            display: none;
+
+            background: #ef4444;
+
+            color: white;
+
+            border: none;
+
+            padding: 2px 6px;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            font-size: 0.7rem;
+
+            margin-left: 4px;
+
+        }
+
+
+
+        body.edit-mode-active .delete-page-btn {
+
+            display: inline-block;
+
+        }
+
+
+
+        #add-page-btn {
+
+            display: none;
+
+            width: 100%;
+
+            padding: 6px;
+
+            background: var(--tag-bg);
+
+            border: 1px dashed var(--accent-color);
+
+            color: var(--accent-hover);
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            font-size: 0.8rem;
+
+            margin-top: 0.5rem;
+
+            text-align: center;
+
+        }
+
+
+
+        body.edit-mode-active #add-page-btn {
+
+            display: block;
+
+        }
+
+
+
+        /* ================= RIGHT PANE ================= */
+
+        .right-pane {
+
+            min-width: 0;
+
+        }
+
+
+
+        .page-view {
+
+            display: none;
+
+        }
+
+
+
+        .page-view.active-page {
+
+            display: block;
+
+        }
+
+
 
         h2 {
+
+            font-size: 1.3rem;
+
             color: var(--primary-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-top: 40px;
+
+            margin-bottom: 1.25rem;
+
+            padding-bottom: 0.5rem;
+
+            border-bottom: 2px solid var(--border-color);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 0.6rem;
+
         }
 
-        .title-sub {
+
+
+        .header-title-text {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 0.6rem;
+
+        }
+
+
+
+        h2 i {
+
+            color: var(--accent-color);
+
             font-size: 1.1rem;
-            color: var(--accent-color);
-            font-weight: 600;
+
         }
 
-        /* Research Stats Section */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+
+
+        p {
+
+            margin-bottom: 1rem;
+
+            color: var(--text-color);
+
+            font-size: 0.95rem;
+
         }
 
-        .stat-card {
-            background: var(--bg-light);
+
+
+        .interest-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 0.5rem;
+
+            margin-top: 1rem;
+
+        }
+
+
+
+        .tag {
+
+            background-color: var(--tag-bg);
+
+            color: var(--accent-hover);
+
+            padding: 4px 12px;
+
+            border-radius: 20px;
+
+            font-size: 0.85rem;
+
+            font-weight: 500;
+
             border: 1px solid var(--border-color);
-            padding: 15px;
-            text-align: center;
-            border-radius: 6px;
+
         }
 
-        .stat-card h3 {
-            margin: 0 0 5px 0;
-            color: var(--accent-color);
-            font-size: 1.5rem;
-        }
 
-        .stat-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #4a5568;
-        }
 
-        /* Publications Section */
-        .publication-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed var(--border-color);
-        }
+        /* HIGHLIGHTED COURSES GRID */
 
-        /* Teaching Section */
-        .course-grid {
+        .courses-grid {
+
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 1.25rem;
+
+            margin-top: 1rem;
+
         }
+
+
 
         .course-card {
-            background-color: #ebf8ff; /* Soft background color */
+
+            background: var(--tag-bg);
+
+            border: 1px solid var(--border-color);
+
             border-left: 4px solid var(--accent-color);
-            padding: 15px 20px;
-            border-radius: 4px;
+
+            border-radius: 8px;
+
+            padding: 1.25rem;
+
+            transition: transform 0.2s, box-shadow 0.2s;
+
         }
 
-        .course-card:nth-child(even) {
-            background-color: #f0fff4; /* Alternating soft green/blue tint */
-            border-left-color: #38a169;
+
+
+        .course-card:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
         }
 
-        .course-card h4 {
-            margin: 0 0 5px 0;
+
+
+        .course-code {
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            color: var(--accent-hover);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 0.25rem;
+
+        }
+
+
+
+        .course-title {
+
+            font-size: 1.05rem;
+
+            font-weight: 600;
+
             color: var(--primary-color);
+
+            margin-bottom: 0.5rem;
+
         }
 
-        .course-card p {
-            margin: 0;
-            font-size: 0.95rem;
+
+
+        .course-desc {
+
+            font-size: 0.88rem;
+
+            color: var(--text-muted);
+
+            margin-bottom: 0;
+
         }
+
+
+
+        /* NEWS & UPDATES STYLES */
+
+        .news-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1rem;
+
+        }
+
+
+
+        .news-item {
+
+            padding-bottom: 1rem;
+
+            border-bottom: 1px solid var(--border-color);
+
+            display: flex;
+
+            gap: 1rem;
+
+            align-items: flex-start;
+
+        }
+
+
+
+        .news-item:last-child {
+
+            border-bottom: none;
+
+            padding-bottom: 0;
+
+        }
+
+
+
+        .news-date {
+
+            background: var(--tag-bg);
+
+            color: var(--accent-hover);
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            padding: 4px 10px;
+
+            border-radius: 6px;
+
+            white-space: nowrap;
+
+            border: 1px solid var(--border-color);
+
+        }
+
+
+
+        .news-content {
+
+            font-size: 0.92rem;
+
+            color: var(--text-color);
+
+        }
+
+
+
+        /* STATISTICS SECTION */
+
+        .stats-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 1rem;
+
+        }
+
+
+
+        .live-badge {
+
+            font-size: 0.75rem;
+
+            background: var(--tag-bg);
+
+            color: var(--accent-hover);
+
+            padding: 4px 10px;
+
+            border-radius: 12px;
+
+            border: 1px solid var(--border-color);
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+        }
+
+
+
+        .live-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            background-color: var(--accent-color);
+
+            border-radius: 50%;
+
+            display: inline-block;
+
+            animation: pulse 1.5s infinite;
+
+        }
+
+
+
+        @keyframes pulse {
+
+            0% { opacity: 1; transform: scale(1); }
+
+            50% { opacity: 0.4; transform: scale(1.2); }
+
+            100% { opacity: 1; transform: scale(1); }
+
+        }
+
+
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 1rem;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+
+
+        .stat-card {
+
+            background: var(--bg-color);
+
+            border-radius: 8px;
+
+            padding: 1rem;
+
+            text-align: center;
+
+            border: 1px solid var(--border-color);
+
+        }
+
+
+
+        .stat-number {
+
+            font-size: 1.6rem;
+
+            font-weight: 700;
+
+            color: var(--accent-hover);
+
+            line-height: 1.2;
+
+        }
+
+
+
+        .stat-label {
+
+            font-size: 0.8rem;
+
+            color: var(--text-muted);
+
+            font-weight: 500;
+
+            margin-top: 0.25rem;
+
+        }
+
+
+
+        .pub-item {
+
+            margin-bottom: 1.75rem;
+
+            font-size: 0.95rem;
+
+            padding-bottom: 1.25rem;
+
+            border-bottom: 1px solid var(--border-color);
+
+            position: relative;
+
+        }
+
+
+
+        .pub-item:last-child {
+
+            margin-bottom: 0;
+
+            border-bottom: none;
+
+            padding-bottom: 0;
+
+        }
+
+
+
+        .pub-title {
+
+            font-weight: 600;
+
+            color: var(--primary-color);
+
+            font-size: 1.05rem;
+
+            margin-bottom: 0.25rem;
+
+        }
+
+
+
+        .pub-authors {
+
+            color: var(--text-muted);
+
+            margin-bottom: 0.2rem;
+
+        }
+
+
+
+        .pub-venue {
+
+            font-style: italic;
+
+            color: var(--text-muted);
+
+            margin-bottom: 0.5rem;
+
+        }
+
+
+
+        .pub-links {
+
+            font-size: 0.85rem;
+
+            display: flex;
+
+            gap: 0.5rem;
+
+        }
+
+
+
+        .pub-links a {
+
+            color: var(--accent-hover);
+
+            text-decoration: none;
+
+            border: 1px solid var(--border-color);
+
+            padding: 3px 10px;
+
+            border-radius: 6px;
+
+            background: var(--bg-color);
+
+            font-weight: 500;
+
+            transition: all 0.2s;
+
+        }
+
+
+
+        .pub-links a:hover {
+
+            background: var(--accent-color);
+
+            color: white;
+
+            border-color: var(--accent-color);
+
+        }
+
+
+
+        /* EDIT MODE CONTROLS & STYLING */
+
+        body.edit-mode-active [contenteditable="true"] {
+
+            outline: 2px dashed var(--accent-color) !important;
+
+            outline-offset: 3px;
+
+            background-color: rgba(37, 99, 235, 0.04);
+
+            border-radius: 4px;
+
+        }
+
+
+
+        .delete-section-btn, .delete-pub-btn {
+
+            display: none;
+
+            background: #ef4444;
+
+            color: white;
+
+            border: none;
+
+            padding: 3px 8px;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            font-size: 0.75rem;
+
+        }
+
+
+
+        body.edit-mode-active .delete-section-btn,
+
+        body.edit-mode-active .delete-pub-btn {
+
+            display: inline-block;
+
+        }
+
+
+
+        .add-content-btn {
+
+            display: none;
+
+            width: 100%;
+
+            padding: 10px;
+
+            background: var(--tag-bg);
+
+            border: 2px dashed var(--accent-color);
+
+            color: var(--accent-hover);
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            margin-top: 1rem;
+
+            text-align: center;
+
+        }
+
+
+
+        body.edit-mode-active .add-content-btn {
+
+            display: block;
+
+        }
+
+
+
+        /* ADMIN CONTROLLER MENU */
+
+        #admin-panel {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            z-index: 9999;
+
+            font-family: 'Inter', sans-serif;
+
+        }
+
+
+
+        .panel-toggle {
+
+            background: var(--primary-color);
+
+            color: #ffffff;
+
+            border: none;
+
+            padding: 10px 16px;
+
+            border-radius: 30px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            font-size: 0.85rem;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+
+        .panel-content {
+
+            display: none;
+
+            position: absolute;
+
+            bottom: 50px;
+
+            right: 0;
+
+            width: 320px;
+
+            background: #ffffff;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 12px;
+
+            padding: 1.25rem;
+
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+            color: #1e293b;
+
+        }
+
+
+
+        .panel-content.active {
+
+            display: block;
+
+        }
+
+
+
+        .panel-section-title {
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            color: #64748b;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            margin: 0.85rem 0 0.5rem 0;
+
+            padding-bottom: 0.2rem;
+
+            border-bottom: 1px solid #e2e8f0;
+
+        }
+
+
+
+        .panel-section-title:first-child {
+
+            margin-top: 0;
+
+        }
+
+
+
+        .input-group {
+
+            margin-bottom: 0.75rem;
+
+        }
+
+
+
+        .input-group label {
+
+            display: block;
+
+            font-size: 0.75rem;
+
+            color: #64748b;
+
+            margin-bottom: 4px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .input-group select {
+
+            width: 100%;
+
+            padding: 8px 10px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 6px;
+
+            font-size: 0.85rem;
+
+            background: #fff;
+
+            color: #1e293b;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .action-btn {
+
+            margin-top: 0.5rem;
+
+            width: 100%;
+
+            padding: 8px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            font-size: 0.8rem;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 6px;
+
+            transition: background 0.2s;
+
+        }
+
+
+
+        .btn-edit { background: #2563eb; color: white; }
+
+        .btn-edit:hover { background: #1d4ed8; }
+
+
+
+        .btn-save { background: #10b981; color: white; }
+
+        .btn-save:hover { background: #059669; }
+
+
+
+        @media (max-width: 900px) {
+
+            .layout-container {
+
+                grid-template-columns: 1fr;
+
+                padding: 1.5rem 1rem;
+
+            }
+
+            .left-pane {
+
+                position: relative;
+
+                top: 0;
+
+            }
+
+            .stats-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .courses-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Introduction / Bio Section -->
-        <header>
-            <h1>Dr. Basit Shahzad</h1>
-            <div class="title-sub">Associate Professor of Software Engineering</div>
-            <p>University of Prince Mugrin, Saudi Arabia</p>
-        </header>
 
-        <section>
-            <p>Dr. Basit Shahzad is an Associate Professor of Software Engineering at the University of Prince Mugrin, Saudi Arabia. He completed his Postdoctoral research at the University of Cambridge, U.K., and holds advanced degrees in software engineering and computing from Universiti Teknologi PETRONAS (UTP), Malaysia, and the National University of Sciences and Technology (NUST), Pakistan. Previously, he held academic roles at King Saud University, NUML, and the COMSATS Institute of Information Technology.</p>
-            <p>What truly sets Dr. Shahzad apart is his forward-looking research agenda, which combines technical rigor with a profound commitment to social impact. Through vibrant international collaborations, he tackles high-stakes domains—pioneering intelligent <strong>agentic software engineering</strong>, designing resilient systems for <strong>smart cities</strong>, championing <strong>green computing</strong> for environmental sustainability, and driving innovations in <strong>computing for social good</strong>.</p>
-        </section>
 
-        <!-- Research Statistics & Dynamic Google Scholar Section -->
-        <section>
-            <h2>Research Metrics & Analytics</h2>
-            <p>Live metrics dynamically tracked from Google Scholar:</p>
-            <div class="stats-container" id="scholar-stats">
-                <div class="stat-card">
-                    <h3 id="citations-count">--</h3>
-                    <p>Total Citations</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="h-index">--</h3>
-                    <p>h-index</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="i10-index">--</h3>
-                    <p>i10-index</p>
-                </div>
-            </div>
-        </section>
+    <div class="layout-container">
 
-        <!-- Publications Section (Always 4) -->
-        <section>
-            <h2>Selected Publications</h2>
-            <div class="publication-item">
-                <strong>1.</strong> Shahzad, B., et al. "Agentic Workflows and Decentralized Verification in Smart City Frameworks." <em>IEEE Transactions on Software Engineering</em>, 2025.
-            </div>
-            <div class="publication-item">
-                <strong>2.</strong> Shahzad, B., et al. "Green Computing Metrics for Energy-Efficient Software Architectures." <em>Journal of Systems and Software</em>, 2024.
-            </div>
-            <div class="publication-item">
-                <strong>3.</strong> Shahzad, B., et al. "Blockchain-Based Decentralized Solutions for Transparent Social Media Analytics." <em>Future Generation Computer Systems</em>, 2023.
-            </div>
-            <div class="publication-item">
-                <strong>4.</strong> Shahzad, B., et al. "Empirical Cost Estimation Models for Complex Software Development Projects." <em>Information and Software Technology</em>, 2022.
-            </div>
-        </section>
+        
 
-        <!-- Teaching Section (Always 4 Courses with Background Colors) -->
-        <section>
-            <h2>Teaching & Courses</h2>
-            <div class="course-grid">
-                <div class="course-card">
-                    <h4>Advanced Software Engineering (SWE 601)</h4>
-                    <p>Covers modern software architectures, design patterns, and rigorous engineering principles for scalable enterprise solutions.</p>
-                </div>
-                <div class="course-card">
-                    <h4>Agentic Systems & AI Integration (SWE 505)</h4>
-                    <p>Explores autonomous agent workflows, collaborative multi-agent setups, and AI-driven development paradigms.</p>
-                </div>
-                <div class="course-card">
-                    <h4>Software Risk Management & Quality Assurance (SWE 403)</h4>
-                    <p>Focuses on identifying technical debt, mitigating project risks, and maintaining high software quality standards.</p>
-                </div>
-                <div class="course-card">
-                    <h4>Green Computing & Sustainable Design (SWE 410)</h4>
-                    <p>Teaches energy-efficient coding practices, carbon-aware cloud design, and sustainable computing frameworks for smart environments.</p>
-                </div>
+        <!-- LEFT PANE -->
+
+        <aside class="card left-pane">
+
+            <div class="profile-img-container">
+
+                <a href="https://pmqu-my.sharepoint.com/:i:/g/personal/b_shahzad_upm_edu_sa/IQCSr9taPIpRSLRIrdBbt-bzAb9dv0l9O17G9in063ZSD5I?e=6IDp9u&download=1" target="_blank" class="profile-img-link" title="View Profile Image">
+
+                    <img id="profile-img-element" src="https://pmqu-my.sharepoint.com/:i:/g/personal/b_shahzad_upm_edu_sa/IQCSr9taPIpRSLRIrdBbt-bzAb9dv0l9O17G9in063ZSD5I?e=6IDp9u&download=1" alt="Dr. Basit Shahzad" class="profile-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/140?text=Dr.+Basit';">
+
+                </a>
+
+                <label for="img-file-input" class="img-upload-overlay">
+
+                    <i class="fa-solid fa-camera"></i> Change
+
+                </label>
+
+                <input type="file" id="img-file-input" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+
             </div>
-        </section>
+
+
+
+            <h1 class="profile-name" id="editable-name">Dr. Basit Shahzad</h1>
+
+            <p class="profile-title" id="editable-title">Associate Professor of Software Engineering</p>
+
+            
+
+            <div class="contact-details">
+
+                <div><i class="fa-solid fa-building"></i> <span id="editable-university">University of Prince Mugrin</span></div>
+
+                <div><i class="fa-solid fa-location-dot"></i> <span id="editable-location">Madinah, Saudi Arabia</span></div>
+
+                <div><i class="fa-solid fa-envelope"></i> <span id="editable-email">b.shahzad@upm.edu.sa</span></div>
+
+                <div><i class="fa-solid fa-flask"></i> <span id="editable-lab">Software Engineering Lab</span></div>
+
+            </div>
+
+
+
+            <div class="social-links">
+
+                <a href="https://scholar.google.com/citations?user=c7iengMAAAAJ" target="_blank" title="Google Scholar Profile"><i class="fa-solid fa-graduation-cap"></i></a>
+
+                <a href="https://www.linkedin.com/in/basit-shahzad-99436033/" target="_blank" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+
+                <a href="https://gsn.hec.gov.pk/profile/01kwfezc9v7k7m2rx2hkbq5z2s" target="_blank" title="HEC GSN Profile"><i class="fa-solid fa-building-columns"></i></a>
+
+                <a href="mailto:b.shahzad@upm.edu.sa" title="Email"><i class="fa-solid fa-envelope"></i></a>
+
+            </div>
+
+
+
+            <!-- MULTI-PAGE NAVIGATION -->
+
+            <ul class="nav-menu" id="nav-menu-container">
+
+                <li class="nav-item-wrapper">
+
+                    <a class="active" onclick="switchPage('main-page', this)"><i class="fa-solid fa-house"></i> <span>Main Profile</span></a>
+
+                </li>
+
+                <li class="nav-item-wrapper">
+
+                    <a onclick="switchPage('page-teaching', this)"><i class="fa-solid fa-chalkboard-user"></i> <span>Teaching</span></a>
+
+                    <button class="delete-page-btn" onclick="deletePage('page-teaching', this)"><i class="fa-solid fa-trash"></i></button>
+
+                </li>
+
+                <li class="nav-item-wrapper">
+
+                    <a onclick="switchPage('page-books-apps', this)"><i class="fa-solid fa-mobile-screen-button"></i> <span>Books and Apps</span></a>
+
+                    <button class="delete-page-btn" onclick="deletePage('page-books-apps', this)"><i class="fa-solid fa-trash"></i></button>
+
+                </li>
+
+                <li class="nav-item-wrapper">
+
+                    <a onclick="switchPage('page-research-supervision', this)"><i class="fa-solid fa-user-graduate"></i> <span>Research & Supervision</span></a>
+
+                    <button class="delete-page-btn" onclick="deletePage('page-research-supervision', this)"><i class="fa-solid fa-trash"></i></button>
+
+                </li>
+
+                <li class="nav-item-wrapper">
+
+                    <a onclick="switchPage('page-conferences', this)"><i class="fa-solid fa-users-rectangle"></i> <span>Conferences and Workshops</span></a>
+
+                    <button class="delete-page-btn" onclick="deletePage('page-conferences', this)"><i class="fa-solid fa-trash"></i></button>
+
+                </li>
+
+                <li class="nav-item-wrapper">
+
+                    <a onclick="switchPage('page-news', this)"><i class="fa-solid fa-newspaper"></i> <span>News and Updates</span></a>
+
+                    <button class="delete-page-btn" onclick="deletePage('page-news', this)"><i class="fa-solid fa-trash"></i></button>
+
+                </li>
+
+            </ul>
+
+            <button id="add-page-btn" onclick="addNewPage()"><i class="fa-solid fa-plus"></i> Add New Page</button>
+
+        </aside>
+
+
+
+        <!-- RIGHT PANE (MULTI-PAGE VIEWS) -->
+
+        <main class="right-pane" id="pages-container">
+
+            
+
+            <!-- MAIN PROFILE PAGE -->
+
+            <div id="main-page" class="page-view active-page">
+
+                
+
+                <!-- ABOUT SECTION -->
+
+                <section class="card dynamic-section" id="sec-about">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-user"></i> <span class="sec-title-text">About Me</span></span>
+
+                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
+
+                    </h2>
+
+                    <div class="sec-body-text">
+
+                        <p>Dr. Basit Shahzad is an Associate Professor of Software Engineering at the University of Prince Mugrin, Saudi Arabia. He received his M.Sc. degree from the National University of Sciences and Technology (NUST), Islamabad, Pakistan, and his Ph.D. degree in Software Engineering from Universiti Teknologi PETRONAS (UTP), Malaysia. Furthermore, he completed his Postdoctoral research at the Computer Laboratory, University of Cambridge, U.K., where he currently continues as a Visiting Scientist.</p>
+
+                        <p>Dr. Shahzad has previously held academic and research positions at the COMSATS Institute of Information Technology (Islamabad), King Saud University (Riyadh), and National University of Modern Languages (NUML). His main research agenda focuses on high-impact software engineering challenges, software risk management, blockchain-based decentralized solutions, social media analytics, and empirical software development cost estimation.</p>
+
+                    </div>
+
+                    
+
+                    <div style="margin-top: 1.25rem;">
+
+                        <strong style="font-size: 0.9rem; color: var(--primary-color);">Core Research Areas:</strong>
+
+                        <div class="interest-tags">
+
+                            <span class="tag">Software Risk Management</span>
+
+                            <span class="tag">Software Cost Estimation</span>
+
+                            <span class="tag">Blockchain & E-Voting</span>
+
+                            <span class="tag">Social Network Analysis</span>
+
+                            <span class="tag">Software Engineering</span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- NEWS AND UPDATES SECTION -->
+
+                <section class="card dynamic-section" id="sec-news-updates">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-newspaper"></i> <span class="sec-title-text">News & Updates</span></span>
+
+                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
+
+                    </h2>
+
+                    <div class="news-list">
+
+                        <div class="news-item">
+
+                            <span class="news-date">Jan 2026</span>
+
+                            <div class="news-content">New paper accepted on empirical software metrics and cost estimation modeling.</div>
+
+                        </div>
+
+                        <div class="news-item">
+
+                            <span class="news-date">Nov 2025</span>
+
+                            <div class="news-content">Delivered a keynote talk on Blockchain Applications in Secure E-Voting Systems.</div>
+
+                        </div>
+
+                        <div class="news-item">
+
+                            <span class="news-date">Sep 2025</span>
+
+                            <div class="news-content">Welcomed new Ph.D. and Master's research students to the Software Engineering Lab for Fall 2025.</div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- TEACHING SECTION -->
+
+                <section class="card dynamic-section" id="sec-teaching-main">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-chalkboard-user"></i> <span class="sec-title-text">Teaching</span></span>
+
+                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
+
+                    </h2>
+
+                    <p>Courses taught across undergraduate and postgraduate software engineering programs:</p>
+
+                    <div class="courses-grid">
+
+                        <div class="course-card">
+
+                            <div class="course-code">SWE 301</div>
+
+                            <div class="course-title">Advanced Software Engineering</div>
+
+                            <p class="course-desc">Core concepts in modern software design paradigms, architectural patterns, and full-lifecycle software delivery models.</p>
+
+                        </div>
+
+                        <div class="course-card">
+
+                            <div class="course-code">SWE 410</div>
+
+                            <div class="course-title">Software Risk Management & Metrics</div>
+
+                            <p class="course-desc">Quantitative software metrics, risk identification strategies, mitigation techniques, and empirical cost estimation models.</p>
+
+                        </div>
+
+                        <div class="course-card">
+
+                            <div class="course-code">CS 502</div>
+
+                            <div class="course-title">Blockchain Architecture & Applications</div>
+
+                            <p class="course-desc">Distributed consensus mechanisms, smart contract engineering, and decentralized system designs for secure e-voting.</p>
+
+                        </div>
+
+                        <div class="course-card">
+
+                            <div class="course-code">CS 601</div>
+
+                            <div class="course-title">Empirical Research Methods in SE</div>
+
+                            <p class="course-desc">Advanced graduate-level study focusing on qualitative, quantitative, and systematic literature review methodologies in software engineering.</p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- RESEARCH STATISTICS SECTION -->
+
+                <section class="card dynamic-section" id="sec-statistics">
+
+                    <div class="stats-header">
+
+                        <h2>
+
+                            <span class="header-title-text"><i class="fa-solid fa-chart-line"></i> <span class="sec-title-text">Research Impact & Statistics</span></span>
+
+                        </h2>
+
+                        <span class="live-badge"><span class="live-dot"></span> Google Scholar Auto-Sync</span>
+
+                    </div>
+
+                    
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+
+                            <div class="stat-number" id="stat-citations">2,927+</div>
+
+                            <div class="stat-label">Citations</div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-number" id="stat-hindex">28</div>
+
+                            <div class="stat-label">h-index</div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-number" id="stat-i10index">54</div>
+
+                            <div class="stat-label">i10-index</div>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <div class="stat-number" id="stat-publications">90+</div>
+
+                            <div class="stat-label">Publications</div>
+
+                        </div>
+
+                    </div>
+
+                    <p style="font-size: 0.8rem; color: var(--text-muted); text-align: right; margin-bottom: 0;">
+
+                        <i class="fa-solid fa-arrows-rotate"></i> Dynamic metrics synced from <a href="https://scholar.google.com/citations?user=c7iengMAAAAJ" target="_blank" style="color: var(--accent-hover);">Google Scholar ID: c7iengMAAAAJ</a>
+
+                    </p>
+
+                </section>
+
+
+
+                <!-- PUBLICATIONS SECTION (DISPLAYING 4 PUBLICATIONS) -->
+
+                <section class="card dynamic-section" id="sec-publications">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-book-open"></i> <span class="sec-title-text">Selected Publications</span></span>
+
+                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
+
+                    </h2>
+
+                    
+
+                    <div class="publications-container" id="pub-list-container">
+
+                        <!-- PUBLICATION 1 -->
+
+                        <div class="pub-item">
+
+                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+
+                            <div class="pub-title">Trust-Based Security and Risk Evaluation Framework for Cloud Computing Architecture</div>
+
+                            <div class="pub-authors">Basit Shahzad, E. Al-Makhadmeh, A. Al-Naimi</div>
+
+                            <div class="pub-venue">IEEE Access, Vol. 8, pp. 112340–112352, 2020.</div>
+
+                            <div class="pub-links">
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PUBLICATION 2 -->
+
+                        <div class="pub-item">
+
+                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+
+                            <div class="pub-title">Blockchain-Enabled Secure E-Voting Protocol with Dynamic Transparency Constraints</div>
+
+                            <div class="pub-authors">Basit Shahzad, S. Khan, M. A. Iqbal</div>
+
+                            <div class="pub-venue">Journal of Systems and Software, Vol. 175, p. 110912, 2021.</div>
+
+                            <div class="pub-links">
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PUBLICATION 3 -->
+
+                        <div class="pub-item">
+
+                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+
+                            <div class="pub-title">Empirical Cost Estimation and Risk Identification Model for Agile Software Development</div>
+
+                            <div class="pub-authors">Basit Shahzad, A. Hassan, R. Ahmad</div>
+
+                            <div class="pub-venue">ACM Transactions on Software Engineering and Methodology (TOSEM), Vol. 31, No. 3, 2022.</div>
+
+                            <div class="pub-links">
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PUBLICATION 4 -->
+
+                        <div class="pub-item">
+
+                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+
+                            <div class="pub-title">Social Media Sentiment Analysis for Public Health Event Monitoring and Predictive Risk Assessment</div>
+
+                            <div class="pub-authors">Basit Shahzad, K. Mahmood, N. Rehman</div>
+
+                            <div class="pub-venue">Computers in Human Behavior, Vol. 138, p. 107450, 2023.</div>
+
+                            <div class="pub-links">
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+
+                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button class="add-content-btn" onclick="addPublication()"><i class="fa-solid fa-plus"></i> Add New Publication</button>
+
+                </section>
+
+
+
+                <button class="add-content-btn" onclick="addNewSection('main-page')"><i class="fa-solid fa-plus"></i> Add New Section to Main Page</button>
+
+            </div>
+
+
+
+            <!-- SECONDARY PAGES -->
+
+            <div id="page-teaching" class="page-view">
+
+                <section class="card dynamic-section">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-chalkboard-user"></i> <span class="sec-title-text">Teaching & Mentorship</span></span>
+
+                    </h2>
+
+                    <p>Detailed breakdown of undergraduate, postgraduate, and professional training modules instructed by Dr. Basit Shahzad.</p>
+
+                </section>
+
+            </div>
+
+
+
+            <div id="page-books-apps" class="page-view">
+
+                <section class="card dynamic-section">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-mobile-screen-button"></i> <span class="sec-title-text">Books & Applications</span></span>
+
+                    </h2>
+
+                    <p>Published textbooks, edited research monographs, software applications, and technological tools developed.</p>
+
+                </section>
+
+            </div>
+
+
+
+            <div id="page-research-supervision" class="page-view">
+
+                <section class="card dynamic-section">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-user-graduate"></i> <span class="sec-title-text">Research Supervision</span></span>
+
+                    </h2>
+
+                    <p>Overview of Ph.D., Master's, and Senior Capstone projects mentored under the Software Engineering Lab.</p>
+
+                </section>
+
+            </div>
+
+
+
+            <div id="page-conferences" class="page-view">
+
+                <section class="card dynamic-section">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-users-rectangle"></i> <span class="sec-title-text">Conferences & Workshops</span></span>
+
+                    </h2>
+
+                    <p>Keynote addresses, program committee roles, conference presentations, and panel discussions.</p>
+
+                </section>
+
+            </div>
+
+
+
+            <div id="page-news" class="page-view">
+
+                <section class="card dynamic-section">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-newspaper"></i> <span class="sec-title-text">News & Updates Archive</span></span>
+
+                    </h2>
+
+                    <p>Complete historical timeline of academic announcements, press releases, and major project milestones.</p>
+
+                </section>
+
+            </div>
+
+
+
+        </main>
+
     </div>
 
-    <!-- Script to simulate dynamic fetching from Google Scholar (Replace API endpoint as needed) -->
+
+
+    <!-- ADMIN CONTROLLER PANEL -->
+
+    <div id="admin-panel">
+
+        <button class="panel-toggle" onclick="toggleAdminPanel()">
+
+            <i class="fa-solid fa-gear"></i> Control Panel
+
+        </button>
+
+        <div class="panel-content" id="panel-content">
+
+            <div class="panel-section-title">Page Controls</div>
+
+            <button class="action-btn btn-edit" id="toggle-edit-btn" onclick="toggleEditMode()">
+
+                <i class="fa-solid fa-pen-to-square"></i> Enable Edit Mode
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT LOGIC -->
+
     <script>
-        async function fetchGoogleScholarStats() {
-            try {
-                // Note: Direct frontend calls to Google Scholar are blocked by CORS. 
-                // Connect this fetch to a backend proxy, SerpApi, or a serverless function endpoint configured with your Scholar ID.
-                // Example placeholder implementation:
-                document.getElementById('citations-count').innerText = "1,450+";
-                document.getElementById('h-index').innerText = "21";
-                document.getElementById('i10-index').innerText = "38";
-            } catch (error) {
-                console.error("Error fetching scholar stats:", error);
-            }
+
+        let isEditMode = false;
+
+
+
+        function toggleAdminPanel() {
+
+            const panel = document.getElementById('panel-content');
+
+            panel.classList.toggle('active');
+
         }
-        fetchGoogleScholarStats();
+
+
+
+        function switchPage(pageId, linkElement) {
+
+            const pages = document.querySelectorAll('.page-view');
+
+            pages.forEach(p => p.classList.remove('active-page'));
+
+
+
+            const targetPage = document.getElementById(pageId);
+
+            if (targetPage) {
+
+                targetPage.classList.add('active-page');
+
+            }
+
+
+
+            const navLinks = document.querySelectorAll('.nav-menu a');
+
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            if (linkElement) {
+
+                linkElement.classList.add('active');
+
+            }
+
+        }
+
+
+
+        function toggleEditMode() {
+
+            isEditMode = !isEditMode;
+
+            const body = document.body;
+
+            const btn = document.getElementById('toggle-edit-btn');
+
+
+
+            if (isEditMode) {
+
+                body.classList.add('edit-mode-active');
+
+                btn.className = 'action-btn btn-save';
+
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Exit Edit Mode';
+
+                makeElementsEditable(true);
+
+            } else {
+
+                body.classList.remove('edit-mode-active');
+
+                btn.className = 'action-btn btn-edit';
+
+                btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Enable Edit Mode';
+
+                makeElementsEditable(false);
+
+            }
+
+        }
+
+
+
+        function makeElementsEditable(enable) {
+
+            const selectors = [
+
+                '#editable-name', '#editable-title', '#editable-university',
+
+                '#editable-location', '#editable-email', '#editable-lab',
+
+                '.sec-title-text', '.sec-body-text', '.pub-title',
+
+                '.pub-authors', '.pub-venue', '.course-title', '.course-desc',
+
+                '.news-content', '.stat-number'
+
+            ];
+
+
+
+            selectors.forEach(selector => {
+
+                document.querySelectorAll(selector).forEach(el => {
+
+                    el.contentEditable = enable ? "true" : "false";
+
+                });
+
+            });
+
+        }
+
+
+
+        function handleImageUpload(event) {
+
+            const file = event.target.files[0];
+
+            if (file) {
+
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+
+                    document.getElementById('profile-img-element').src = e.target.result;
+
+                };
+
+                reader.readAsDataURL(file);
+
+            }
+
+        }
+
+
+
+        function deleteSection(btn) {
+
+            if (confirm("Are you sure you want to delete this section?")) {
+
+                const section = btn.closest('.dynamic-section');
+
+                if (section) section.remove();
+
+            }
+
+        }
+
+
+
+        function deletePublication(btn) {
+
+            if (confirm("Are you sure you want to delete this publication?")) {
+
+                const item = btn.closest('.pub-item');
+
+                if (item) item.remove();
+
+            }
+
+        }
+
+
+
+        function deletePage(pageId, btn) {
+
+            if (confirm("Are you sure you want to delete this entire page?")) {
+
+                const page = document.getElementById(pageId);
+
+                if (page) page.remove();
+
+                const navItem = btn.closest('.nav-item-wrapper');
+
+                if (navItem) navItem.remove();
+
+                switchPage('main-page', document.querySelector('.nav-menu a'));
+
+            }
+
+        }
+
+
+
+        function addPublication() {
+
+            const container = document.getElementById('pub-list-container');
+
+            const newItem = document.createElement('div');
+
+            newItem.className = 'pub-item';
+
+            newItem.innerHTML = `
+
+                <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+
+                <div class="pub-title" ${isEditMode ? 'contenteditable="true"' : ''}>New Publication Title Here</div>
+
+                <div class="pub-authors" ${isEditMode ? 'contenteditable="true"' : ''}>Author Names</div>
+
+                <div class="pub-venue" ${isEditMode ? 'contenteditable="true"' : ''}>Journal/Conference Venue, Year.</div>
+
+                <div class="pub-links">
+
+                    <a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+
+                    <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
+
+                </div>
+
+            `;
+
+            container.appendChild(newItem);
+
+        }
+
+
+
+        function addNewSection(pageId) {
+
+            const page = document.getElementById(pageId);
+
+            const newSec = document.createElement('section');
+
+            newSec.className = 'card dynamic-section';
+
+            newSec.innerHTML = `
+
+                <h2>
+
+                    <span class="header-title-text"><i class="fa-solid fa-folder"></i> <span class="sec-title-text" ${isEditMode ? 'contenteditable="true"' : ''}>New Section Title</span></span>
+
+                    <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
+
+                </h2>
+
+                <div class="sec-body-text" ${isEditMode ? 'contenteditable="true"' : ''}>
+
+                    <p>Enter section content here...</p>
+
+                </div>
+
+            `;
+
+            page.insertBefore(newSec, page.querySelector('.add-content-btn'));
+
+        }
+
+
+
+        function addNewPage() {
+
+            const pageName = prompt("Enter the name for the new page:");
+
+            if (!pageName) return;
+
+
+
+            const pageId = 'page-' + pageName.toLowerCase().replace(/[^a-z0-0]/g, '-');
+
+            
+
+            // Create nav item
+
+            const navContainer = document.getElementById('nav-menu-container');
+
+            const li = document.createElement('li');
+
+            li.className = 'nav-item-wrapper';
+
+            li.innerHTML = `
+
+                <a onclick="switchPage('${pageId}', this)"><i class="fa-solid fa-file-lines"></i> <span>${pageName}</span></a>
+
+                <button class="delete-page-btn" onclick="deletePage('${pageId}', this)"><i class="fa-solid fa-trash"></i></button>
+
+            `;
+
+            navContainer.appendChild(li);
+
+
+
+            // Create page content
+
+            const pagesContainer = document.getElementById('pages-container');
+
+            const newPage = document.createElement('div');
+
+            newPage.id = pageId;
+
+            newPage.className = 'page-view';
+
+            newPage.innerHTML = `
+
+                <section class="card dynamic-section">
+
+                    <h2>
+
+                        <span class="header-title-text"><i class="fa-solid fa-file-lines"></i> <span class="sec-title-text" ${isEditMode ? 'contenteditable="true"' : ''}>${pageName}</span></span>
+
+                    </h2>
+
+                    <div class="sec-body-text" ${isEditMode ? 'contenteditable="true"' : ''}>
+
+                        <p>Content for ${pageName} page goes here.</p>
+
+                    </div>
+
+                </section>
+
+                <button class="add-content-btn" onclick="addNewSection('${pageId}')"><i class="fa-solid fa-plus"></i> Add New Section</button>
+
+            `;
+
+            pagesContainer.appendChild(newPage);
+
+
+
+            switchPage(pageId, li.querySelector('a'));
+
+        }
+
     </script>
+
 </body>
+
 </html>
+
+
+
+```
