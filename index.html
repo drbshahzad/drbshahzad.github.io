@@ -880,9 +880,8 @@
         <!-- LEFT PANE -->
         <aside class="card left-pane">
             <div class="profile-img-container">
-               <img src="images/1783513450691.jfif" alt="Profile Picture" class="profile-pic">
-               
-                    <img id="profile-img-element" src="https://drbasit.github.io/images/1783513450691.jfif" alt="Dr. Basit Shahzad" class="profile-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23f4ecd8%22/%3E%3Ctext x=%2250%25%22 y=%2257%25%22 font-family=%22Georgia,serif%22 font-size=%2264%22 fill=%22%23a9822f%22 text-anchor=%22middle%22%3EBS%3C/text%3E%3C/svg%3E';">
+                <a href="https://drbasit.github.io/images/1783513450691.jfif" target="_blank" class="profile-img-link" title="View Profile Image">
+                    <img id="profile-img-element" src="https://drbasit.github.io/images/1783513450691.jfif" alt="Dr. Basit Shahzad" class="profile-img" data-fallback-index="0" onerror="cycleProfileImage(this)">
                 </a>
                 <label for="img-file-input" class="img-upload-overlay">
                     <i class="fa-solid fa-camera"></i> Change
@@ -1346,6 +1345,27 @@
                     el.contentEditable = enable ? "true" : "false";
                 });
             });
+        }
+
+        // Profile photo: try the given GitHub Pages path first, then the
+        // two most likely raw-GitHub equivalents (main/master branch),
+        // and only fall back to the monogram if none of them resolve.
+        const PROFILE_IMG_CANDIDATES = [
+            'https://drbasit.github.io/images/1783513450691.jfif',
+            'https://raw.githubusercontent.com/drbasit/drbasit.github.io/main/images/1783513450691.jfif',
+            'https://raw.githubusercontent.com/drbasit/drbasit.github.io/master/images/1783513450691.jfif'
+        ];
+        const PROFILE_IMG_FALLBACK = 'data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23f4ecd8%22/%3E%3Ctext x=%2250%25%22 y=%2257%25%22 font-family=%22Georgia,serif%22 font-size=%2264%22 fill=%22%23a9822f%22 text-anchor=%22middle%22%3EBS%3C/text%3E%3C/svg%3E';
+
+        function cycleProfileImage(img) {
+            const nextIndex = parseInt(img.getAttribute('data-fallback-index') || '0', 10) + 1;
+            if (nextIndex < PROFILE_IMG_CANDIDATES.length) {
+                img.setAttribute('data-fallback-index', String(nextIndex));
+                img.src = PROFILE_IMG_CANDIDATES[nextIndex];
+            } else {
+                img.onerror = null;
+                img.src = PROFILE_IMG_FALLBACK;
+            }
         }
 
         function handleImageUpload(event) {
