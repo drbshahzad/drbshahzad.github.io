@@ -911,26 +911,26 @@
             <!-- MULTI-PAGE NAVIGATION -->
 <ul class="nav-menu" id="nav-menu-container">
     <li class="nav-item-wrapper">
-        <a class="active" href="index.html"><i class="fa-solid fa-house"></i> <span>Main Profile</span></a>
+        <a class="active" href="#" onclick="switchPage('main-page', this); return false;"><i class="fa-solid fa-house"></i> <span>Main Profile</span></a>
     </li>
     <li class="nav-item-wrapper">
-        <a href="teaching.html"><i class="fa-solid fa-chalkboard-user"></i> <span>Teaching</span></a>
+        <a href="#" onclick="switchPage('page-teaching', this); return false;"><i class="fa-solid fa-chalkboard-user"></i> <span>Teaching</span></a>
         <button class="delete-page-btn" onclick="deletePage('page-teaching', this)"><i class="fa-solid fa-trash"></i></button>
     </li>
     <li class="nav-item-wrapper">
-        <a href="books-apps.html"><i class="fa-solid fa-mobile-screen-button"></i> <span>Books and Apps</span></a>
+        <a href="#" onclick="switchPage('page-books-apps', this); return false;"><i class="fa-solid fa-mobile-screen-button"></i> <span>Books and Apps</span></a>
         <button class="delete-page-btn" onclick="deletePage('page-books-apps', this)"><i class="fa-solid fa-trash"></i></button>
     </li>
     <li class="nav-item-wrapper">
-        <a href="research-supervision.html"><i class="fa-solid fa-user-graduate"></i> <span>Research &amp; Supervision</span></a>
+        <a href="#" onclick="switchPage('page-research-supervision', this); return false;"><i class="fa-solid fa-user-graduate"></i> <span>Research &amp; Supervision</span></a>
         <button class="delete-page-btn" onclick="deletePage('page-research-supervision', this)"><i class="fa-solid fa-trash"></i></button>
     </li>
     <li class="nav-item-wrapper">
-        <a href="conferences.html"><i class="fa-solid fa-users-rectangle"></i> <span>Conferences and Workshops</span></a>
+        <a href="#" onclick="switchPage('page-conferences', this); return false;"><i class="fa-solid fa-users-rectangle"></i> <span>Conferences and Workshops</span></a>
         <button class="delete-page-btn" onclick="deletePage('page-conferences', this)"><i class="fa-solid fa-trash"></i></button>
     </li>
     <li class="nav-item-wrapper">
-        <a href="news.html"><i class="fa-solid fa-newspaper"></i> <span>News</span></a>
+        <a href="#" onclick="switchPage('page-news', this); return false;"><i class="fa-solid fa-newspaper"></i> <span>News</span></a>
         <button class="delete-page-btn" onclick="deletePage('page-news', this)"><i class="fa-solid fa-trash"></i></button>
     </li>
 </ul>
@@ -992,22 +992,16 @@
                             </div>
                         </div>
 
-                       <div class="publications-container" id="pub-list-container" style="color: green;">
-    <!-- BOOK -->
-    <div class="pub-item">
-        <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-        <span class="pub-kind">General Chair</span>
-        <div class="pub-title">2nd International Workshop on Software Architecture for Green Software Systems</div>
-        <div class="pub-authors">co-located with International Conference on Software Architecture (ICSA).</div>
-        <div class="pub-venue">8-11 March 2027, Sydney, Australia.</div>
-        <div class="pub-links">
-            <a href="https://sites.google.com/view/greenarch2027/home"><i class="fa-solid fa-envelope"></i> Visit Worshop Website</a>
-        </div>
-    </div>
-</div>
-
-
-                       
+                        <!-- GENERAL CHAIR -->
+                        <div class="pub-item" style="color: green;">
+                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+                            <span class="pub-kind">General Chair</span>
+                            <div class="pub-title">2nd International Workshop on Software Architecture for Green Software Systems</div>
+                            <div class="pub-authors">co-located with International Conference on Software Architecture (ICSA).</div>
+                            <div class="pub-venue">8-11 March 2027, Sydney, Australia.</div>
+                            <div class="pub-links">
+                                <a href="https://sites.google.com/view/greenarch2027/home"><i class="fa-solid fa-envelope"></i> Visit Worshop Website</a>
+                            </div>
                         </div>
                     </div>
 
@@ -1089,9 +1083,7 @@
                             <div class="stat-number" id="stat-workshops">2</div>
                             <div class="stat-label">Workshops Founded</div>
                         </div>
-                    
-                                          
-                    
+                    </div>
                 </section>
 
                
@@ -1281,11 +1273,15 @@
 
         function switchPage(pageId, linkElement) {
             const pages = document.querySelectorAll('.page-view');
-            pages.forEach(p => p.classList.remove('active-page'));
+            pages.forEach(p => {
+                p.classList.remove('active-page');
+                p.style.display = 'none';
+            });
 
             const targetPage = document.getElementById(pageId);
             if (targetPage) {
                 targetPage.classList.add('active-page');
+                targetPage.style.display = 'block';
             }
 
             const navLinks = document.querySelectorAll('.nav-menu a');
@@ -1293,6 +1289,8 @@
             if (linkElement) {
                 linkElement.classList.add('active');
             }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleEditMode() {
