@@ -20,6 +20,7 @@
             --text-muted: #647085;
             --bg-color: #f7f7f4;           /* warm-neutral paper, not stark white */
             --card-bg: #ffffff;
+            --surface: #fbfaf6;            /* secondary surface for stat/course cards */
             --border-color: #e6e2d8;
             --tag-bg: #f4ecd8;
             --success: #1e7b45;
@@ -82,6 +83,160 @@
             --bg-color: #faf7f2;
             --border-color: #ece1d9;
             --tag-bg: #f7ecd4;
+        }
+
+        /* ===== 10 additional variations — stronger contrast, page
+           background (--bg-color / --card-bg / --surface) now shifts
+           with each theme, not just text and accent colors. ===== */
+
+        body[data-theme="slate-copper"] {
+            --primary-color: #1c2a3a;
+            --primary-soft: #32485f;
+            --accent-color: #c1652f;
+            --accent-hover: #9c4e22;
+            --accent-tint: #f6e2d2;
+            --text-color: #25303c;
+            --text-muted: #5c6b7a;
+            --bg-color: #e7edf2;
+            --card-bg: #ffffff;
+            --surface: #f2f6f8;
+            --border-color: #cbd7e0;
+            --tag-bg: #f6e2d2;
+        }
+
+        body[data-theme="midnight-amber"] {
+            --primary-color: #f0c675;
+            --primary-soft: #d9a94f;
+            --accent-color: #f2a154;
+            --accent-hover: #c97e35;
+            --accent-tint: #3a2c18;
+            --text-color: #e7e9ee;
+            --text-muted: #a3aab5;
+            --bg-color: #11141b;
+            --card-bg: #1a1e27;
+            --surface: #20242f;
+            --border-color: #2b303c;
+            --tag-bg: #332816;
+        }
+
+        body[data-theme="plum-sage"] {
+            --primary-color: #3d2447;
+            --primary-soft: #5b3a67;
+            --accent-color: #5f8564;
+            --accent-hover: #456049;
+            --accent-tint: #e4ede2;
+            --text-color: #2c2032;
+            --text-muted: #6c5f74;
+            --bg-color: #f3eef5;
+            --card-bg: #ffffff;
+            --surface: #f7f2f8;
+            --border-color: #e3d9e6;
+            --tag-bg: #e4ede2;
+        }
+
+        body[data-theme="crimson-ivory"] {
+            --primary-color: #4a0e1c;
+            --primary-soft: #6e1a2c;
+            --accent-color: #b3202f;
+            --accent-hover: #8c1824;
+            --accent-tint: #fbe4e2;
+            --text-color: #33191c;
+            --text-muted: #7a5c5f;
+            --bg-color: #fbf4ee;
+            --card-bg: #ffffff;
+            --surface: #fdf8f2;
+            --border-color: #ecd9cf;
+            --tag-bg: #fbe4e2;
+        }
+
+        body[data-theme="ocean-coral"] {
+            --primary-color: #0b3d55;
+            --primary-soft: #155d7a;
+            --accent-color: #e2725b;
+            --accent-hover: #c0553f;
+            --accent-tint: #fde3dc;
+            --text-color: #122b36;
+            --text-muted: #527282;
+            --bg-color: #eaf5f7;
+            --card-bg: #ffffff;
+            --surface: #f2f9fa;
+            --border-color: #cfe6ea;
+            --tag-bg: #fde3dc;
+        }
+
+        body[data-theme="espresso-mint"] {
+            --primary-color: #a9e6c8;
+            --primary-soft: #7fc7a4;
+            --accent-color: #4fbd8a;
+            --accent-hover: #379468;
+            --accent-tint: #173226;
+            --text-color: #e7e6e1;
+            --text-muted: #a79c92;
+            --bg-color: #1c1512;
+            --card-bg: #241a16;
+            --surface: #2b1f1a;
+            --border-color: #3a2b24;
+            --tag-bg: #20362b;
+        }
+
+        body[data-theme="royal-rosegold"] {
+            --primary-color: #2e1a5e;
+            --primary-soft: #4a2c85;
+            --accent-color: #c98a72;
+            --accent-hover: #a76c56;
+            --accent-tint: #f7e6df;
+            --text-color: #251a3d;
+            --text-muted: #6b5e82;
+            --bg-color: #f5f1fa;
+            --card-bg: #ffffff;
+            --surface: #f9f5fc;
+            --border-color: #e3d9ef;
+            --tag-bg: #f7e6df;
+        }
+
+        body[data-theme="graphite-lime"] {
+            --primary-color: #d6f24e;
+            --primary-soft: #b8d43c;
+            --accent-color: #9fd63a;
+            --accent-hover: #7fae2b;
+            --accent-tint: #2a3312;
+            --text-color: #e6e8e1;
+            --text-muted: #9aa094;
+            --bg-color: #16181a;
+            --card-bg: #1e2123;
+            --surface: #24282a;
+            --border-color: #2f3335;
+            --tag-bg: #2c3315;
+        }
+
+        body[data-theme="indigo-marigold"] {
+            --primary-color: #242a66;
+            --primary-soft: #3a4290;
+            --accent-color: #e0a730;
+            --accent-hover: #b98620;
+            --accent-tint: #fbecd0;
+            --text-color: #242642;
+            --text-muted: #5f637e;
+            --bg-color: #f4f2ea;
+            --card-bg: #ffffff;
+            --surface: #f8f6ee;
+            --border-color: #e5e0cd;
+            --tag-bg: #fbecd0;
+        }
+
+        body[data-theme="onyx-turquoise"] {
+            --primary-color: #5fd8cf;
+            --primary-soft: #3fb0a8;
+            --accent-color: #2bb8ac;
+            --accent-hover: #1f9186;
+            --accent-tint: #12302d;
+            --text-color: #e3e8e7;
+            --text-muted: #95a3a1;
+            --bg-color: #0d1414;
+            --card-bg: #151f1f;
+            --surface: #1a2626;
+            --border-color: #243131;
+            --tag-bg: #173430;
         }
 
         * {
@@ -425,7 +580,7 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid #ecdfb8;
+            border: 1px solid var(--border-color);
         }
 
         /* HIGHLIGHTED COURSES GRID */
@@ -437,7 +592,7 @@
         }
 
         .course-card {
-            background: #fbfaf6;
+            background: var(--surface);
             border: 1px solid var(--border-color);
             border-left: 4px solid var(--accent-color);
             border-radius: 8px;
@@ -513,7 +668,7 @@
             padding: 4px 10px;
             border-radius: 6px;
             white-space: nowrap;
-            border: 1px solid #ecdfb8;
+            border: 1px solid var(--border-color);
         }
 
         .news-content {
@@ -537,7 +692,7 @@
             color: var(--accent-hover);
             padding: 4px 10px;
             border-radius: 12px;
-            border: 1px solid #ecdfb8;
+            border: 1px solid var(--border-color);
             display: inline-flex;
             align-items: center;
             gap: 5px;
@@ -566,7 +721,7 @@
         }
 
         .stat-card {
-            background: #fbfaf6;
+            background: var(--surface);
             border-radius: 8px;
             padding: 1.1rem 0.75rem;
             text-align: center;
@@ -610,7 +765,7 @@
             letter-spacing: 0.4px;
             color: var(--accent-hover);
             background: var(--tag-bg);
-            border: 1px solid #ecdfb8;
+            border: 1px solid var(--border-color);
             padding: 2px 9px;
             border-radius: 20px;
             margin-bottom: 0.5rem;
@@ -731,6 +886,8 @@
             bottom: 50px;
             right: 0;
             width: 320px;
+            max-height: 70vh;
+            overflow-y: auto;
             background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -951,7 +1108,7 @@
                         <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
                     </h2>
                     <div class="sec-body-text">
-                        <p class="lede"></strong>A career built across four countries, on one continuing question: how do we make software engineering more sustainable, more trustworthy, and more human?</p>
+                        <p class="lede">A career built across four countries, on one continuing question: how do we make software engineering more sustainable, more trustworthy, and more human?</p>
                         <p>Dr. Basit Shahzad is an Associate Professor of Software Engineering at the University of Prince Mugrin, Saudi Arabia. He holds a Ph.D. in Software Engineering from Universiti Teknologi PETRONAS (UTP), Malaysia, and performed his postdoctoral research at the Computer Laboratory, University of Cambridge, United Kingdom.</p>
                         <p>His academic path has taken him through Pakistan, Malaysia, the UK, and Saudi Arabia. His research agenda centers on agentic software engineering, emperical software engineering, AI and society, and software for social good, with a consistent underlying commitment to humanized computing using technology in service of people.</p>
                     </div>
@@ -1182,8 +1339,7 @@
                 <section class="card dynamic-section">
                     <h2>
                         <span class="header-title-text"><i class="fa-solid fa-newspaper"></i> <span class="sec-title-text">News &amp; Updates Archive</span></span>
-                    
-                    </div>
+                    </h2>
                 </section>
             </div>
 
@@ -1203,13 +1359,21 @@
                 <button class="theme-swatch" data-theme="forest-ochre" title="Forest &amp; Ochre" style="--sw1:#17332a; --sw2:#b08a3e;" onclick="applyTheme('forest-ochre', this)"><i class="fa-solid fa-check"></i></button>
                 <button class="theme-swatch" data-theme="charcoal-teal" title="Charcoal &amp; Teal" style="--sw1:#1f2933; --sw2:#0f7173;" onclick="applyTheme('charcoal-teal', this)"><i class="fa-solid fa-check"></i></button>
                 <button class="theme-swatch" data-theme="maroon-gold" title="Maroon &amp; Gold" style="--sw1:#4a1420; --sw2:#b3922f;" onclick="applyTheme('maroon-gold', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="slate-copper" title="Slate &amp; Copper" style="--sw1:#1c2a3a; --sw2:#c1652f;" onclick="applyTheme('slate-copper', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="midnight-amber" title="Midnight &amp; Amber (Dark)" style="--sw1:#11141b; --sw2:#f2a154;" onclick="applyTheme('midnight-amber', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="plum-sage" title="Plum &amp; Sage" style="--sw1:#3d2447; --sw2:#5f8564;" onclick="applyTheme('plum-sage', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="crimson-ivory" title="Crimson &amp; Ivory" style="--sw1:#4a0e1c; --sw2:#b3202f;" onclick="applyTheme('crimson-ivory', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="ocean-coral" title="Ocean &amp; Coral" style="--sw1:#0b3d55; --sw2:#e2725b;" onclick="applyTheme('ocean-coral', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="espresso-mint" title="Espresso &amp; Mint (Dark)" style="--sw1:#1c1512; --sw2:#4fbd8a;" onclick="applyTheme('espresso-mint', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="royal-rosegold" title="Royal &amp; Rose Gold" style="--sw1:#2e1a5e; --sw2:#c98a72;" onclick="applyTheme('royal-rosegold', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="graphite-lime" title="Graphite &amp; Lime (Dark)" style="--sw1:#16181a; --sw2:#9fd63a;" onclick="applyTheme('graphite-lime', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="indigo-marigold" title="Indigo &amp; Marigold" style="--sw1:#242a66; --sw2:#e0a730;" onclick="applyTheme('indigo-marigold', this)"><i class="fa-solid fa-check"></i></button>
+                <button class="theme-swatch" data-theme="onyx-turquoise" title="Onyx &amp; Turquoise (Dark)" style="--sw1:#0d1414; --sw2:#2bb8ac;" onclick="applyTheme('onyx-turquoise', this)"><i class="fa-solid fa-check"></i></button>
             </div>
             <div class="theme-name-label" id="theme-name-label">Ink &amp; Bronze (Default)</div>
 
             <div class="panel-section-title">Page Controls</div>
-            <button class="action-btn btn-edit" id="toggle-edit-btn" onclick="toggleEditMode()">
-                <i class="fa-solid fa-pen-to-square"></i> Enable Edit Mode
-            </button>
+           
         </div>
     </div>
 
@@ -1222,7 +1386,17 @@
             'oxford-burgundy': 'Oxford Navy &amp; Burgundy',
             'forest-ochre': 'Forest &amp; Ochre',
             'charcoal-teal': 'Charcoal &amp; Teal',
-            'maroon-gold': 'Maroon &amp; Gold'
+            'maroon-gold': 'Maroon &amp; Gold',
+            'slate-copper': 'Slate &amp; Copper',
+            'midnight-amber': 'Midnight &amp; Amber (Dark)',
+            'plum-sage': 'Plum &amp; Sage',
+            'crimson-ivory': 'Crimson &amp; Ivory',
+            'ocean-coral': 'Ocean &amp; Coral',
+            'espresso-mint': 'Espresso &amp; Mint (Dark)',
+            'royal-rosegold': 'Royal &amp; Rose Gold',
+            'graphite-lime': 'Graphite &amp; Lime (Dark)',
+            'indigo-marigold': 'Indigo &amp; Marigold',
+            'onyx-turquoise': 'Onyx &amp; Turquoise (Dark)'
         };
 
         function applyTheme(themeName, btn) {
@@ -1409,11 +1583,8 @@
             try { saved = localStorage.getItem('bs-site-theme') || 'ink-bronze'; } catch (e) { /* storage unavailable */ }
             applyTheme(saved);
         });
-    
-   
- 
     </script>
-    ,<center>
+    <center>
      <a href="https://info.flagcounter.com/kk8q"><img src="https://s01.flagcounter.com/count2/kk8q/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_20/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
      </center>
 </body>
