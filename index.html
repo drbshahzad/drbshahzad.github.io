@@ -908,32 +908,33 @@
             </div>
 
             <!-- MULTI-PAGE NAVIGATION -->
-            <ul class="nav-menu" id="nav-menu-container">
-                <li class="nav-item-wrapper">
-                    <a class="active" onclick="switchPage('main-page', this)"><i class="fa-solid fa-house"></i> <span>Main Profile</span></a>
-                </li>
-                <li class="nav-item-wrapper">
-                    <a onclick="switchPage('page-teaching', this)"><i class="fa-solid fa-chalkboard-user"></i> <span>Teaching</span></a>
-                    <button class="delete-page-btn" onclick="deletePage('page-teaching', this)"><i class="fa-solid fa-trash"></i></button>
-                </li>
-                <li class="nav-item-wrapper">
-                    <a onclick="switchPage('page-books-apps', this)"><i class="fa-solid fa-mobile-screen-button"></i> <span>Books and Apps</span></a>
-                    <button class="delete-page-btn" onclick="deletePage('page-books-apps', this)"><i class="fa-solid fa-trash"></i></button>
-                </li>
-                <li class="nav-item-wrapper">
-                    <a onclick="switchPage('page-research-supervision', this)"><i class="fa-solid fa-user-graduate"></i> <span>Research &amp; Supervision</span></a>
-                    <button class="delete-page-btn" onclick="deletePage('page-research-supervision', this)"><i class="fa-solid fa-trash"></i></button>
-                </li>
-                <li class="nav-item-wrapper">
-                    <a onclick="switchPage('page-conferences', this)"><i class="fa-solid fa-users-rectangle"></i> <span>Conferences and Workshops</span></a>
-                    <button class="delete-page-btn" onclick="deletePage('page-conferences', this)"><i class="fa-solid fa-trash"></i></button>
-                </li>
-                <li class="nav-item-wrapper">
-                    <a onclick="switchPage('page-news', this)"><i class="fa-solid fa-newspaper"></i> <span>News and Updates</span></a>
-                    <button class="delete-page-btn" onclick="deletePage('page-news', this)"><i class="fa-solid fa-trash"></i></button>
-                </li>
-            </ul>
-            <button id="add-page-btn" onclick="addNewPage()"><i class="fa-solid fa-plus"></i> Add New Page</button>
+            <!-- MULTI-PAGE NAVIGATION -->
+<ul class="nav-menu" id="nav-menu-container">
+    <li class="nav-item-wrapper">
+        <a class="active" href="index.html"><i class="fa-solid fa-house"></i> <span>Main Profile</span></a>
+    </li>
+    <li class="nav-item-wrapper">
+        <a href="teaching.html"><i class="fa-solid fa-chalkboard-user"></i> <span>Teaching</span></a>
+        <button class="delete-page-btn" onclick="deletePage('page-teaching', this)"><i class="fa-solid fa-trash"></i></button>
+    </li>
+    <li class="nav-item-wrapper">
+        <a href="books-apps.html"><i class="fa-solid fa-mobile-screen-button"></i> <span>Books and Apps</span></a>
+        <button class="delete-page-btn" onclick="deletePage('page-books-apps', this)"><i class="fa-solid fa-trash"></i></button>
+    </li>
+    <li class="nav-item-wrapper">
+        <a href="research-supervision.html"><i class="fa-solid fa-user-graduate"></i> <span>Research &amp; Supervision</span></a>
+        <button class="delete-page-btn" onclick="deletePage('page-research-supervision', this)"><i class="fa-solid fa-trash"></i></button>
+    </li>
+    <li class="nav-item-wrapper">
+        <a href="conferences.html"><i class="fa-solid fa-users-rectangle"></i> <span>Conferences and Workshops</span></a>
+        <button class="delete-page-btn" onclick="deletePage('page-conferences', this)"><i class="fa-solid fa-trash"></i></button>
+    </li>
+    <li class="nav-item-wrapper">
+        <a href="news.html"><i class="fa-solid fa-newspaper"></i> <span>News</span></a>
+        <button class="delete-page-btn" onclick="deletePage('page-news', this)"><i class="fa-solid fa-trash"></i></button>
+    </li>
+</ul>
+
         </aside>
 
         <!-- RIGHT PANE (MULTI-PAGE VIEWS) -->
@@ -949,9 +950,9 @@
                         <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
                     </h2>
                     <div class="sec-body-text">
-                        <p class="lede">A career built across four countries, on one continuing question: how do we make software engineering more sustainable, more trustworthy, and more human?</p>
-                        <p>Dr. Basit Shahzad is an Associate Professor of Software Engineering at the University of Prince Mugrin, Saudi Arabia. He holds a Ph.D. in Software Engineering from Universiti Teknologi PETRONAS (UTP), Malaysia, and completed postdoctoral research at the Computer Laboratory, University of Cambridge, United Kingdom.</p>
-                        <p>His academic path has taken him through Pakistan, Malaysia, the UK, and Saudi Arabia, with visiting fellowships at Macquarie University (Australia) and Hagenberg (Austria). His research agenda centers on software architecture, green and sustainable computing, AI-assisted software engineering, and risk and cost estimation within requirements engineering — with a consistent underlying commitment to <strong>humanized computing</strong>: using technology deliberately in service of people.</p>
+                        <p class="lede"></strong>A career built across four countries, on one continuing question: how do we make software engineering more sustainable, more trustworthy, and more human?</p>
+                        <p>Dr. Basit Shahzad is an Associate Professor of Software Engineering at the University of Prince Mugrin, Saudi Arabia. He holds a Ph.D. in Software Engineering from Universiti Teknologi PETRONAS (UTP), Malaysia, and performed his postdoctoral research at the Computer Laboratory, University of Cambridge, United Kingdom.</p>
+                        <p>His academic path has taken him through Pakistan, Malaysia, the UK, and Saudi Arabia. His research agenda centers on agentic software engineering, emperical software engineering, AI and society, and software for social good, with a consistent underlying commitment to humanized computing using technology in service of people.</p>
                     </div>
 
                     <div style="margin-top: 1.25rem;">
@@ -968,6 +969,51 @@
                     </div>
                 </section>
 
+               
+                <!-- FEATURED WORK SECTION -->
+                <section class="card dynamic-section" id="sec-publications">
+                    <h2>
+                        <span class="header-title-text"><i class="fa-solid fa-book-open"></i> <span class="sec-title-text">Featured Work</span></span>
+                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
+                    </h2>
+
+                    <div class="publications-container" id="pub-list-container">
+                        <!-- BOOK -->
+                        <div class="pub-item">
+                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+                            <span class="pub-kind">Book</span>
+                            <div class="pub-title">Modern Software Engineering with AI Essentials</div>
+                            <div class="pub-authors">Basit Shahzad</div>
+                            <div class="pub-venue">First Edition, ISBN 979-8241532466, Dec. 2025.</div>
+                            <div class="pub-links">
+                                <a href="mailto:b.shahzad@upm.edu.sa"><i class="fa-solid fa-envelope"></i> Enquire</a>
+                                <a href="https://www.amazon.com/dp/B0GDGDCKJK?lv=shuf&channelId=500&plpRedirect=mhFallback"><i class="fa-solid fa-envelope"></i> Buy / Recommend</a>
+                                <a href=""><i class="fa-solid fa-envelope"></i> Book Resources </a>
+                            </div>
+                        </div>
+
+                       <div class="publications-container" id="pub-list-container" style="color: green;">
+    <!-- BOOK -->
+    <div class="pub-item">
+        <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
+        <span class="pub-kind">General Chair</span>
+        <div class="pub-title">2nd International Workshop on Software Architecture for Green Software Systems</div>
+        <div class="pub-authors">co-located with International Conference on Software Architecture (ICSA).</div>
+        <div class="pub-venue">8-11 March 2027, Sydney, Australia.</div>
+        <div class="pub-links">
+            <a href="https://sites.google.com/view/greenarch2027/home"><i class="fa-solid fa-envelope"></i> Visit Worshop Website</a>
+        </div>
+    </div>
+</div>
+
+
+                       
+                        </div>
+                    </div>
+
+                    <button class="add-content-btn" onclick="addPublication()"><i class="fa-solid fa-plus"></i> Add New Publication</button>
+                </section>
+               
                 <!-- NEWS AND UPDATES SECTION -->
                 <section class="card dynamic-section" id="sec-news-updates">
                     <h2>
@@ -976,16 +1022,16 @@
                     </h2>
                     <div class="news-list">
                         <div class="news-item">
-                            <span class="news-date">2026</span>
-                            <div class="news-content">Preparing two working papers — <em>"The Carbon Clause"</em> on carbon efficiency as a first-class non-functional requirement, and <em>"Regulating the Revolution"</em> on GenAI's impact on software engineering labor, targeting the ICSE Software Engineering in Society (SEIS) track.</div>
+                            <span class="news-date">2026-27</span>
+                            <div class="news-content">Working on <em>"The Carbon Clause"</em> on carbon efficiency as a first-class non-functional requirement, and on GenAI's impact on software engineering labor, targeting the ICSE Software Engineering in Society (SEIS) track. <strong> ICSE 27, Ireland</strong></div>
                         </div>
                         <div class="news-item">
                             <span class="news-date">2026</span>
-                            <div class="news-content">Teaching SE 471 (Agentic Software Engineering) for the first time, with a full set of weekly lecture materials built from the ground up.</div>
+                            <div class="news-content">Teaching SE 475 (Agentic Software Engineering) for the first time, with a full set of weekly lecture materials built from the ground up. The resource material shall soon be available.</div>
                         </div>
                         <div class="news-item">
                             <span class="news-date">Dec 2025</span>
-                            <div class="news-content"><em>Modern Software Engineering with AI Essentials</em> published by British Noble Press (ISBN 979-8241532466).</div>
+                            <div class="news-content"><em>Modern Software Engineering with AI Essentials</em> published (ISBN 979-8241532466)</div>
                         </div>
                         <div class="news-item">
                             <span class="news-date">2027</span>
@@ -1003,7 +1049,7 @@
                     <p>Courses currently taught, plus a new course in development, in the undergraduate Software Engineering program at UPM:</p>
                     <div class="courses-grid">
                         <div class="course-card">
-                            <div class="course-code">SE 471</div>
+                            <div class="course-code">SE 475</div>
                             <div class="course-title">Agentic Software Engineering</div>
                             <p class="course-desc">Agent architectures, MCP, LangGraph, CrewAI, and AutoGen; prompt- and spec-driven engineering; and the ethics of building autonomous software agents.</p>
                             <span class="course-status status-live">Currently Teaching</span>
@@ -1014,19 +1060,7 @@
                             <p class="course-desc">Elicitation, specification, and validation of requirements, revised to integrate AI-assisted tools such as Otter.ai, IBM DOORS Next, and GitHub Copilot.</p>
                             <span class="course-status status-live">Currently Teaching</span>
                         </div>
-                        <div class="course-card">
-                            <div class="course-code">SE 341</div>
-                            <div class="course-title">Agentic Software Engineering (New Course)</div>
-                            <p class="course-desc">A new NCAAA-compliant undergraduate course structured around the SDLC, AI agent foundations, and executing an agentic software development life cycle.</p>
-                            <span class="course-status status-dev">In Development</span>
-                        </div>
-                        <div class="course-card">
-                            <div class="course-code">Textbook</div>
-                            <div class="course-title">Modern Software Engineering with AI Essentials</div>
-                            <p class="course-desc">Authored by Dr. Shahzad and used as the core reference text across his undergraduate and graduate courses.</p>
-                            <span class="course-status status-ref">Course Reference</span>
-                        </div>
-                    </div>
+                                            </div>
                 </section>
 
                 <!-- RESEARCH STATISTICS SECTION -->
@@ -1056,66 +1090,11 @@
                             <div class="stat-label">Workshops Founded</div>
                         </div>
                     
-                    <p style="font-size: 0.8rem; color: var(--text-muted); text-align: right; margin-bottom: 0;">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Full and current citation record on <a href="https://scholar.google.com/citations?hl=en&user=c7iengMAAAAJ" target="_blank" style="color: var(--accent-hover); font-weight: 600;">Google Scholar (ID: c7iengMAAAAJ)</a>
-                    </p>
+                                          
+                    
                 </section>
 
-                <!-- FEATURED WORK SECTION -->
-                <section class="card dynamic-section" id="sec-publications">
-                    <h2>
-                        <span class="header-title-text"><i class="fa-solid fa-book-open"></i> <span class="sec-title-text">Featured Work</span></span>
-                        <button class="delete-section-btn" onclick="deleteSection(this)"><i class="fa-solid fa-trash"></i> Delete Section</button>
-                    </h2>
-
-                    <div class="publications-container" id="pub-list-container">
-                        <!-- BOOK -->
-                        <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <span class="pub-kind">Book</span>
-                            <div class="pub-title">Modern Software Engineering with AI Essentials</div>
-                            <div class="pub-authors">Basit Shahzad</div>
-                            <div class="pub-venue">British Noble Press, First Edition, ISBN 979-8241532466, Dec. 2025.</div>
-                            <div class="pub-links">
-                                <a href="mailto:b.shahzad@upm.edu.sa"><i class="fa-solid fa-envelope"></i> Enquire</a>
-                                <a href="https://www.amazon.com/dp/B0GDGDCKJK?lv=shuf&channelId=500&plpRedirect=mhFallback"><i class="fa-solid fa-envelope"></i> Buy / Recommend</a>
-                                <a href=""><i class="fa-solid fa-envelope"></i> Book Resources </a>
-                            </div>
-                        </div>
-
-                        <!-- WORKING PAPER 1 -->
-                        <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <span class="pub-kind">Working Paper</span>
-                            <div class="pub-title">The Carbon Clause: Elevating Carbon Efficiency to a First-Class Non-Functional Requirement in Software Engineering</div>
-                            <div class="pub-authors">Basit Shahzad</div>
-                            <div class="pub-venue">In preparation, targeting ICSE-level scientific merit, 2026.</div>
-                        </div>
-
-                        <!-- WORKING PAPER 2 -->
-                        <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <span class="pub-kind">Working Paper</span>
-                            <div class="pub-title">Regulating the Revolution: A Framework for GenAI's Impact on Software Engineering Labor</div>
-                            <div class="pub-authors">Basit Shahzad</div>
-                            <div class="pub-venue">Under preparation for the ICSE Software Engineering in Society (SEIS) track, 2026.</div>
-                        </div>
-
-                        <!-- SCHOLAR POINTER -->
-                        <div class="pub-item">
-                            <button class="delete-pub-btn" onclick="deletePublication(this)" style="position: absolute; right: 0; top: 0;"><i class="fa-solid fa-trash"></i></button>
-                            <span class="pub-kind">Full Record</span>
-                            <div class="pub-title">Complete Publication List</div>
-                            <div class="pub-authors">2,957+ citations across the full body of work</div>
-                            <div class="pub-venue">Maintained live on Google Scholar.</div>
-                            <div class="pub-links">
-                                <a href="https://scholar.google.com/citations?hl=en&user=c7iengMAAAAJ" target="_blank"><i class="fa-solid fa-graduation-cap"></i> View on Google Scholar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="add-content-btn" onclick="addPublication()"><i class="fa-solid fa-plus"></i> Add New Publication</button>
-                </section>
+               
 
                 <button class="add-content-btn" onclick="addNewSection('main-page')"><i class="fa-solid fa-plus"></i> Add New Section to Main Page</button>
             </div>
@@ -1463,6 +1442,12 @@
             try { saved = localStorage.getItem('bs-site-theme') || 'ink-bronze'; } catch (e) { /* storage unavailable */ }
             applyTheme(saved);
         });
+    
+   
+ 
     </script>
+    ,<center>
+     <a href="https://info.flagcounter.com/kk8q"><img src="https://s01.flagcounter.com/count2/kk8q/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_20/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+     </center>
 </body>
 </html>
